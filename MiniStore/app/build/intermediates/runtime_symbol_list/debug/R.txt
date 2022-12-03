@@ -3422,6 +3422,7 @@ int id rcv_productList 0x7f08023c
 int id rcv_products 0x7f08023d
 int id rcv_returnDetail 0x7f08023e
 int id rcv_return_detail 0x7f08023f
+int id rcv_search_product 0x7f080343
 int id rcv_selected_addresses 0x7f080240
 int id rcv_selected_items 0x7f080241
 int id rcv_user 0x7f080242
@@ -3515,6 +3516,7 @@ int id stretch 0x7f080299
 int id submenuarrow 0x7f08029a
 int id submit_area 0x7f08029b
 int id supportScrollUp 0x7f08029c
+int id sv_search_product 0x7f080341
 int id tabMode 0x7f08029d
 int id tab_layout 0x7f08029e
 int id tag_accessibility_actions 0x7f08029f
@@ -3806,6 +3808,7 @@ int layout activity_confirm_return 0x7f0b003b
 int layout activity_detail 0x7f0b003c
 int layout activity_edit_address 0x7f0b003d
 int layout activity_enter_username 0x7f0b003e
+int layout activity_find_product 0x7f0b00db
 int layout activity_login 0x7f0b003f
 int layout activity_main 0x7f0b0040
 int layout activity_new_import 0x7f0b0041
@@ -3873,6 +3876,7 @@ int layout item_selected_cart 0x7f0b007e
 int layout layout_header_nav 0x7f0b007f
 int layout layout_logo_app 0x7f0b0080
 int layout layout_no_address 0x7f0b0081
+int layout layout_search_product 0x7f0b00dc
 int layout m3_alert_dialog 0x7f0b0082
 int layout m3_alert_dialog_actions 0x7f0b0083
 int layout m3_alert_dialog_title 0x7f0b0084
@@ -3962,6 +3966,7 @@ int layout text_view_with_line_height_from_style 0x7f0b00d7
 int layout text_view_with_theme_line_height 0x7f0b00d8
 int layout text_view_without_line_height 0x7f0b00d9
 int layout toolbar_detail 0x7f0b00da
+int layout toolbar_detail_search 0x7f0b00dd
 int menu _menu_action 0x7f0c0000
 int menu menu_bottom_nav 0x7f0c0001
 int menu menu_main 0x7f0c0002

@@ -115,7 +115,7 @@ public class OrderController {
 	public ResponseEntity<?> getReport() {
 		return ResponseEntity.ok(reportService.newReportReceipt(new Date(), 7));
 	}
-
+	
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<?> changeOrderStatus(@PathVariable("id") Integer id,
 			@RequestParam("statusId") Integer statusId,

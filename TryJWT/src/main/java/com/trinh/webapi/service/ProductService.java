@@ -3,7 +3,6 @@ package com.trinh.webapi.service;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
-
 import com.trinh.webapi.model.Product;
 
 
@@ -23,4 +22,6 @@ public interface ProductService {
 	
 	public Product getProductById(Integer id);
 	public void deleteById(Integer id);
+	
+	public List<Product> search(String keyword);
 }

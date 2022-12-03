@@ -3423,6 +3423,7 @@ id rcv_productList
 id rcv_products
 id rcv_returnDetail
 id rcv_return_detail
+id rcv_search_product
 id rcv_selected_addresses
 id rcv_selected_items
 id rcv_user
@@ -3516,6 +3517,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id sv_search_product
 id tabMode
 id tab_layout
 id tag_accessibility_actions
@@ -3807,6 +3809,7 @@ layout activity_confirm_return
 layout activity_detail
 layout activity_edit_address
 layout activity_enter_username
+layout activity_find_product
 layout activity_login
 layout activity_main
 layout activity_new_import
@@ -3874,6 +3877,7 @@ layout item_selected_cart
 layout layout_header_nav
 layout layout_logo_app
 layout layout_no_address
+layout layout_search_product
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3963,6 +3967,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 layout toolbar_detail
+layout toolbar_detail_search
 menu _menu_action
 menu menu_bottom_nav
 menu menu_main

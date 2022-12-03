@@ -172,4 +172,15 @@ public class ProductController {
 
         return ResponseEntity.ok(fullProducts);
     }
+	
+	@GetMapping("/search")
+    public ResponseEntity<List<FullProduct>> searchProduct(@RequestParam("keyword") String keyword){
+		List<Product> products = productService.search(keyword);
+		
+		List<FullProduct> fullProducts = new ArrayList<>();
+		for(Product p : products) 
+			fullProducts.add(new FullProduct(p, priceHistoryService.getLatestPrice(p), promotionService.getCurrentPromotionByProduct(p)));
+
+        return ResponseEntity.ok(fullProducts);
+    }
 }

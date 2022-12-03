@@ -24,4 +24,13 @@ public interface OrderRepository extends JpaRepository<Order, Integer>{
 	
 	public List<Order> findByUserAndStatusOrderByDateDesc(User user, OrderStatus orderStatus);
 	public List<Order> findByUserOrderByDateDesc(User user);
+
+	@Query("select sum(o.totalPrice) from Order o where YEAR(o.date) = :year")
+	public Long sumOrderByYear(Integer year);
+	
+	@Query("select sum(o.totalPrice) from Order o where YEAR(o.date) = :year and MONTH(o.date) = :month")
+	public Long sumOrderByYearAndMonth(Integer year, Integer month);
+	
+	@Query("select sum(o.totalPrice) from Order o where DATE(o.date) = :date")
+	public Long sumOrderByDate(@Param("date") Date date);
 }

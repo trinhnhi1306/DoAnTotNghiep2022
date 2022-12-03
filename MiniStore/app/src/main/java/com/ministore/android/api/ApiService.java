@@ -113,6 +113,9 @@ public interface ApiService {
     @GET("product/all")
     Call<List<Product>> getListProducts();
 
+    @GET("product/search")
+    Call<List<Product>> searchProducts(@Query("keyword") String keyword);
+
     @POST("admin/product")
     Call<ResponseBody> insertProduct(@Body Product product);
 

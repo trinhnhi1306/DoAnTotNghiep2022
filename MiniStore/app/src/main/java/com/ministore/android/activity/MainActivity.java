@@ -20,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private int currentFragment = FRAGMENT_HOME;
 
     private Toolbar toolbar;
+    private SearchView svSearchProduct;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private BottomNavigationBar bottomNavigationBar;
@@ -198,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNavigationBar = findViewById(R.id.bottom_navigation);
         animationView = findViewById(R.id.animation_view);
         endView = findViewById(R.id.end_view);
+        svSearchProduct = findViewById(R.id.sv_search_product);
 
         imgUser = navigationView.getHeaderView(0).findViewById(R.id.img_user_avatar);
         txtName = navigationView.getHeaderView(0).findViewById(R.id.tv_name);
@@ -279,6 +282,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                 }
                 bottomNavigationBar.selectTab(position);
+            }
+        });
+
+        svSearchProduct.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+//                Toast.makeText(MainActivity.this, "Click search", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), FindProductActivity.class);
+                intent.putExtra("keyword", svSearchProduct.getQuery() + "");
+                startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
             }
         });
     }

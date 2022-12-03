@@ -367,6 +367,7 @@ id rcv_productList
 id rcv_products
 id rcv_returnDetail
 id rcv_return_detail
+id rcv_search_product
 id rcv_selected_addresses
 id rcv_selected_items
 id rcv_user
@@ -377,6 +378,7 @@ id rtb_vote
 id spProduct
 id sp_brandP
 id sp_categoryP
+id sv_search_product
 id tab_layout
 id textView
 id textView4
@@ -498,6 +500,7 @@ layout activity_confirm_return
 layout activity_detail
 layout activity_edit_address
 layout activity_enter_username
+layout activity_find_product
 layout activity_login
 layout activity_main
 layout activity_new_import
@@ -547,7 +550,9 @@ layout item_selected_cart
 layout layout_header_nav
 layout layout_logo_app
 layout layout_no_address
+layout layout_search_product
 layout toolbar_detail
+layout toolbar_detail_search
 menu _menu_action
 menu menu_bottom_nav
 menu menu_main

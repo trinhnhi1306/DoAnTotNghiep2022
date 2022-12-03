@@ -18,13 +18,14 @@
         android:theme="@style/Theme.MiniStore"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.FindProductActivity"
+            android:exported="false"></activity>
+        <activity
             android:name=".activity.ConfirmReturnActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".activity.ReturnActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".activity._NewImportActivity"
             android:exported="false" />

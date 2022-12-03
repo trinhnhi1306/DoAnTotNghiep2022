@@ -6,25 +6,25 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="26"
-8-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml
+8-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml
+9-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:5:5-80
-11-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:5:22-77
+11-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:5:5-80
+11-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:5:22-77
 12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-12-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:6:5-81
-12-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:6:22-78
+12-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:6:5-81
+12-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:7:5-65
-13-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:7:22-62
+13-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:7:5-65
+13-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:7:22-62
 14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-14-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:8:5-79
-14-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:8:22-76
+14-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:8:5-79
+14-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:8:22-76
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:9:5-67
-15-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:9:22-64
+15-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:9:5-67
+15-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:9:22-64
 16
 17    <permission
 17-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
@@ -38,294 +38,298 @@
 21-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 22
 23    <application
-23-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:11:5-115:19
+23-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:11:5-116:19
 24        android:name="com.ministore.android.MyApplication"
-24-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:12:9-38
+24-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:12:9-38
 25        android:allowBackup="true"
-25-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:13:9-35
+25-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:13:9-35
 26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 26-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\c6770eda00af6c105866b6db09ea3053\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 27        android:debuggable="true"
 28        android:extractNativeLibs="false"
 29        android:icon="@mipmap/ic_cute_book_pencil_cartoon"
-29-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:14:9-59
+29-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:14:9-59
 30        android:label="@string/app_name"
-30-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:15:9-41
+30-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:15:9-41
 31        android:roundIcon="@mipmap/ic_cute_book_pencil_cartoon_round"
-31-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:16:9-70
+31-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:16:9-70
 32        android:supportsRtl="true"
-32-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:17:9-35
+32-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:17:9-35
 33        android:testOnly="true"
 34        android:theme="@style/Theme.MiniStore"
-34-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:18:9-47
+34-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:18:9-47
 35        android:usesCleartextTraffic="true" >
-35-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:19:9-44
+35-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:19:9-44
 36        <activity
-36-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:20:9-23:20
-37            android:name="com.ministore.android.activity.ConfirmReturnActivity"
-37-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:21:13-59
-38            android:exported="false" >
-38-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:22:13-37
-39        </activity>
-40        <activity
-40-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:24:9-27:20
-41            android:name="com.ministore.android.activity.ReturnActivity"
-41-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:25:13-52
-42            android:exported="false" >
-42-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:26:13-37
-43        </activity>
-44        <activity
-44-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:28:9-30:40
-45            android:name="com.ministore.android.activity._NewImportActivity"
-45-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:29:13-56
-46            android:exported="false" />
-46-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:30:13-37
-47        <activity
-47-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:31:9-33:40
-48            android:name="com.ministore.android.activity.RateActivity"
-48-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:32:13-50
-49            android:exported="false" />
-49-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:33:13-37
-50        <activity
-50-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:34:9-36:40
-51            android:name="com.ministore.android.activity.CartActivity"
-51-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:35:13-50
-52            android:exported="false" />
-52-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:36:13-37
-53        <activity
-53-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:37:9-39:40
-54            android:name="com.ministore.android.activity.OrderDetailActivity"
-54-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:38:13-57
-55            android:exported="false" />
-55-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:39:13-37
-56        <activity
-56-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:40:9-42:40
-57            android:name="com.ministore.android.activity.OrderActivity"
-57-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:41:13-51
-58            android:exported="false" />
-58-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:42:13-37
-59        <activity
-59-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:43:9-45:40
-60            android:name="com.ministore.android.activity._OrderDetailActivity"
-60-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:44:13-58
-61            android:exported="false" />
-61-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:45:13-37
-62        <activity
-62-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:46:9-48:40
-63            android:name="com.ministore.android.activity._ImportDetailActivity"
-63-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:47:13-59
-64            android:exported="false" />
-64-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:48:13-37
-65        <activity
-65-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:49:9-51:40
-66            android:name="com.ministore.android.activity.ForgotPasswordActivity"
-66-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:50:13-60
-67            android:exported="false" />
-67-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:51:13-37
-68        <activity
-68-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:52:9-54:40
-69            android:name="com.ministore.android.activity.ChooseEmailOrPhoneActivity"
-69-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:53:13-64
-70            android:exported="false" />
-70-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:54:13-37
-71        <activity
-71-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:55:9-57:40
-72            android:name="com.ministore.android.activity.OTPActivity"
-72-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:56:13-49
-73            android:exported="false" />
-73-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:57:13-37
-74        <activity
-74-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:58:9-60:40
-75            android:name="com.ministore.android.activity.NewPasswordActivity"
-75-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:59:13-57
-76            android:exported="false" />
-76-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:60:13-37
-77        <activity
-77-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:61:9-63:40
-78            android:name="com.ministore.android.activity.EditAddressActivity"
-78-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:62:13-57
-79            android:exported="false" />
-79-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:63:13-37
-80        <activity
-80-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:64:9-66:40
-81            android:name="com.ministore.android.activity.AddressActivity"
-81-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:65:13-53
-82            android:exported="false" />
-82-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:66:13-37
-83        <activity
-83-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:67:9-69:40
-84            android:name="com.ministore.android.activity.CheckOutActivity"
-84-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:68:13-54
-85            android:exported="false" />
-85-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:69:13-37
-86        <activity
-86-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:70:9-72:40
-87            android:name="com.ministore.android.activity._ProductInfoActivity"
-87-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:71:13-58
-88            android:exported="false" />
-88-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:72:13-37
-89        <activity
-89-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:73:9-75:40
-90            android:name="com.ministore.android.activity._UserInfoActivity"
-90-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:74:13-55
-91            android:exported="false" />
-91-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:75:13-37
-92        <activity
-92-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:76:9-78:40
-93            android:name="com.ministore.android.activity._CategoryInfoActivity"
-93-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:77:13-59
-94            android:exported="false" />
-94-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:78:13-37
-95        <activity
-95-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:79:9-81:40
-96            android:name="com.ministore.android.activity._MainActivity"
-96-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:80:13-51
-97            android:exported="false" />
-97-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:81:13-37
-98        <activity
-98-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:82:9-84:40
-99            android:name="com.ministore.android.activity.SettingsActivity"
-99-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:83:13-54
-100            android:exported="false" />
-100-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:84:13-37
-101        <activity
-101-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:85:9-87:40
-102            android:name="com.ministore.android.activity.ChangePasswordActivity"
-102-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:86:13-60
-103            android:exported="false" />
-103-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:87:13-37
-104        <activity
-104-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:88:9-90:40
-105            android:name="com.ministore.android.activity.ProfileActivity"
-105-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:89:13-53
-106            android:exported="false" />
-106-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:90:13-37
-107        <activity
-107-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:91:9-93:40
-108            android:name="com.ministore.android.activity.DetailActivity"
-108-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:92:13-52
-109            android:exported="false" />
-109-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:93:13-37
-110        <activity
-110-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:94:9-96:40
-111            android:name="com.ministore.android.activity.ProductActivity"
-111-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:95:13-53
-112            android:exported="false" />
-112-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:96:13-37
-113        <activity
-113-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:97:9-99:40
-114            android:name="com.ministore.android.activity.OnboardingActivity"
-114-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:98:13-56
-115            android:exported="false" />
-115-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:99:13-37
-116        <activity
-116-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:100:9-108:20
-117            android:name="com.ministore.android.activity.SplashActivity"
-117-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:101:13-52
-118            android:exported="true" >
-118-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:102:13-36
-119            <intent-filter>
-119-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:103:13-107:29
-120                <action android:name="android.intent.action.MAIN" />
-120-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:104:17-69
-120-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:104:25-66
-121
-122                <category android:name="android.intent.category.LAUNCHER" />
-122-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:106:17-77
-122-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:106:27-74
-123            </intent-filter>
-124        </activity>
-125        <activity
-125-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:109:9-111:39
-126            android:name="com.ministore.android.activity.MainActivity"
-126-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:110:13-50
-127            android:exported="true" />
-127-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:111:13-36
-128        <activity
-128-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:112:9-114:39
-129            android:name="com.ministore.android.activity.LoginActivity"
-129-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:113:13-51
-130            android:exported="true" />
-130-->F:\tai lieu\TRINH NGUYEN's backup\Nam4\Phat trien cac ung dung di dong\CuoiKy\MiniStore\app\src\main\AndroidManifest.xml:114:13-36
-131
-132        <provider
-132-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:14:9-22:20
-133            android:name="androidx.core.content.FileProvider"
-133-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:15:13-62
-134            android:authorities="com.ministore.android.provider"
-134-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:16:13-60
-135            android:exported="false"
-135-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:17:13-37
-136            android:grantUriPermissions="true" >
-136-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:18:13-47
-137            <meta-data
-137-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:19:13-21:58
-138                android:name="android.support.FILE_PROVIDER_PATHS"
-138-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:20:17-67
-139                android:resource="@xml/provider_paths" />
-139-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:21:17-55
-140        </provider>
-141
-142        <activity
-142-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:10:9-14:67
-143            android:name="com.gun0912.tedpermission.TedPermissionActivity"
-143-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:11:13-75
-144            android:configChanges="mcc|mnc|locale|keyboard|keyboardHidden|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection"
-144-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:12:13-144
-145            android:screenOrientation="unspecified"
-145-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:13:13-52
-146            android:theme="@style/Theme.Transparent.Permission" />
-146-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:14:13-64
-147
-148        <provider
-148-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:16:9-19:40
-149            android:name="com.gun0912.tedpermission.provider.TedPermissionProvider"
-149-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:17:13-84
-150            android:authorities="com.ministore.android.tedpermissionprovider"
-150-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:18:13-73
-151            android:exported="false" />
-151-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:19:13-37
-152
-153        <activity
-153-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:10:9-14:75
-154            android:name="com.gun0912.tedonactivityresult.ProxyActivity"
-154-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:11:13-73
-155            android:configChanges="mcc|mnc|locale|keyboard|keyboardHidden|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection"
-155-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:12:13-144
-156            android:screenOrientation="unspecified"
-156-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:13:13-52
-157            android:theme="@style/android:Theme.Translucent.NoTitleBar" />
-157-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:14:13-72
-158
-159        <provider
-159-->[com.squareup.picasso:picasso:2.71828] C:\Users\HP\.gradle\caches\transforms-3\c7e5ce0ef2f9edc60f33ff86eff41144\transformed\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
-160            android:name="com.squareup.picasso.PicassoProvider"
-160-->[com.squareup.picasso:picasso:2.71828] C:\Users\HP\.gradle\caches\transforms-3\c7e5ce0ef2f9edc60f33ff86eff41144\transformed\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
-161            android:authorities="com.ministore.android.com.squareup.picasso"
-161-->[com.squareup.picasso:picasso:2.71828] C:\Users\HP\.gradle\caches\transforms-3\c7e5ce0ef2f9edc60f33ff86eff41144\transformed\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
-162            android:exported="false" />
-162-->[com.squareup.picasso:picasso:2.71828] C:\Users\HP\.gradle\caches\transforms-3\c7e5ce0ef2f9edc60f33ff86eff41144\transformed\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
-163        <provider
-163-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-164            android:name="androidx.startup.InitializationProvider"
-164-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-165            android:authorities="com.ministore.android.androidx-startup"
-165-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-166            android:exported="false" >
-166-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-167            <meta-data
-167-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-168                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-168-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-169                android:value="androidx.startup" />
-169-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-170            <meta-data
-170-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\e49fb580d7eda2494a8100e094041989\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-171                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-171-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\e49fb580d7eda2494a8100e094041989\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-172                android:value="androidx.startup" />
-172-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\e49fb580d7eda2494a8100e094041989\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-173        </provider>
-174    </application>
-175
-176</manifest>
+36-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:20:9-22:49
+37            android:name="com.ministore.android.activity.FindProductActivity"
+37-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:21:13-57
+38            android:exported="false" />
+38-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:22:13-37
+39        <activity
+39-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:23:9-25:49
+40            android:name="com.ministore.android.activity.ConfirmReturnActivity"
+40-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:24:13-59
+41            android:exported="false" />
+41-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:25:13-37
+42        <activity
+42-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:26:9-28:49
+43            android:name="com.ministore.android.activity.ReturnActivity"
+43-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:27:13-52
+44            android:exported="false" />
+44-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:28:13-37
+45        <activity
+45-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:29:9-31:40
+46            android:name="com.ministore.android.activity._NewImportActivity"
+46-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:30:13-56
+47            android:exported="false" />
+47-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:31:13-37
+48        <activity
+48-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:32:9-34:40
+49            android:name="com.ministore.android.activity.RateActivity"
+49-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:33:13-50
+50            android:exported="false" />
+50-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:34:13-37
+51        <activity
+51-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:35:9-37:40
+52            android:name="com.ministore.android.activity.CartActivity"
+52-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:36:13-50
+53            android:exported="false" />
+53-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:37:13-37
+54        <activity
+54-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:38:9-40:40
+55            android:name="com.ministore.android.activity.OrderDetailActivity"
+55-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:39:13-57
+56            android:exported="false" />
+56-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:40:13-37
+57        <activity
+57-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:41:9-43:40
+58            android:name="com.ministore.android.activity.OrderActivity"
+58-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:42:13-51
+59            android:exported="false" />
+59-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:43:13-37
+60        <activity
+60-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:44:9-46:40
+61            android:name="com.ministore.android.activity._OrderDetailActivity"
+61-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:45:13-58
+62            android:exported="false" />
+62-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:46:13-37
+63        <activity
+63-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:47:9-49:40
+64            android:name="com.ministore.android.activity._ImportDetailActivity"
+64-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:48:13-59
+65            android:exported="false" />
+65-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:49:13-37
+66        <activity
+66-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:50:9-52:40
+67            android:name="com.ministore.android.activity.ForgotPasswordActivity"
+67-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:51:13-60
+68            android:exported="false" />
+68-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:52:13-37
+69        <activity
+69-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:53:9-55:40
+70            android:name="com.ministore.android.activity.ChooseEmailOrPhoneActivity"
+70-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:54:13-64
+71            android:exported="false" />
+71-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:55:13-37
+72        <activity
+72-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:56:9-58:40
+73            android:name="com.ministore.android.activity.OTPActivity"
+73-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:57:13-49
+74            android:exported="false" />
+74-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:58:13-37
+75        <activity
+75-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:59:9-61:40
+76            android:name="com.ministore.android.activity.NewPasswordActivity"
+76-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:60:13-57
+77            android:exported="false" />
+77-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:61:13-37
+78        <activity
+78-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:62:9-64:40
+79            android:name="com.ministore.android.activity.EditAddressActivity"
+79-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:63:13-57
+80            android:exported="false" />
+80-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:64:13-37
+81        <activity
+81-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:65:9-67:40
+82            android:name="com.ministore.android.activity.AddressActivity"
+82-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:66:13-53
+83            android:exported="false" />
+83-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:67:13-37
+84        <activity
+84-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:68:9-70:40
+85            android:name="com.ministore.android.activity.CheckOutActivity"
+85-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:69:13-54
+86            android:exported="false" />
+86-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:70:13-37
+87        <activity
+87-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:71:9-73:40
+88            android:name="com.ministore.android.activity._ProductInfoActivity"
+88-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:72:13-58
+89            android:exported="false" />
+89-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:73:13-37
+90        <activity
+90-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:74:9-76:40
+91            android:name="com.ministore.android.activity._UserInfoActivity"
+91-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:75:13-55
+92            android:exported="false" />
+92-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:76:13-37
+93        <activity
+93-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:77:9-79:40
+94            android:name="com.ministore.android.activity._CategoryInfoActivity"
+94-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:78:13-59
+95            android:exported="false" />
+95-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:79:13-37
+96        <activity
+96-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:80:9-82:40
+97            android:name="com.ministore.android.activity._MainActivity"
+97-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:81:13-51
+98            android:exported="false" />
+98-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:82:13-37
+99        <activity
+99-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:83:9-85:40
+100            android:name="com.ministore.android.activity.SettingsActivity"
+100-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:84:13-54
+101            android:exported="false" />
+101-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:85:13-37
+102        <activity
+102-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:86:9-88:40
+103            android:name="com.ministore.android.activity.ChangePasswordActivity"
+103-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:87:13-60
+104            android:exported="false" />
+104-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:88:13-37
+105        <activity
+105-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:89:9-91:40
+106            android:name="com.ministore.android.activity.ProfileActivity"
+106-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:90:13-53
+107            android:exported="false" />
+107-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:91:13-37
+108        <activity
+108-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:92:9-94:40
+109            android:name="com.ministore.android.activity.DetailActivity"
+109-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:93:13-52
+110            android:exported="false" />
+110-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:94:13-37
+111        <activity
+111-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:95:9-97:40
+112            android:name="com.ministore.android.activity.ProductActivity"
+112-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:96:13-53
+113            android:exported="false" />
+113-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:97:13-37
+114        <activity
+114-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:98:9-100:40
+115            android:name="com.ministore.android.activity.OnboardingActivity"
+115-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:99:13-56
+116            android:exported="false" />
+116-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:100:13-37
+117        <activity
+117-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:101:9-109:20
+118            android:name="com.ministore.android.activity.SplashActivity"
+118-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:102:13-52
+119            android:exported="true" >
+119-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:103:13-36
+120            <intent-filter>
+120-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:104:13-108:29
+121                <action android:name="android.intent.action.MAIN" />
+121-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:105:17-69
+121-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:105:25-66
+122
+123                <category android:name="android.intent.category.LAUNCHER" />
+123-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:107:17-77
+123-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:107:27-74
+124            </intent-filter>
+125        </activity>
+126        <activity
+126-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:110:9-112:39
+127            android:name="com.ministore.android.activity.MainActivity"
+127-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:111:13-50
+128            android:exported="true" />
+128-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:112:13-36
+129        <activity
+129-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:113:9-115:39
+130            android:name="com.ministore.android.activity.LoginActivity"
+130-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:114:13-51
+131            android:exported="true" />
+131-->C:\Users\HP\OneDrive - Sang ltd\Documents\Tot nghiep\DoAnTotNghiep2022\MiniStore\app\src\main\AndroidManifest.xml:115:13-36
+132
+133        <provider
+133-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:14:9-22:20
+134            android:name="androidx.core.content.FileProvider"
+134-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:15:13-62
+135            android:authorities="com.ministore.android.provider"
+135-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:16:13-60
+136            android:exported="false"
+136-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:17:13-37
+137            android:grantUriPermissions="true" >
+137-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:18:13-47
+138            <meta-data
+138-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:19:13-21:58
+139                android:name="android.support.FILE_PROVIDER_PATHS"
+139-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:20:17-67
+140                android:resource="@xml/provider_paths" />
+140-->[gun0912.ted:tedbottompicker:2.0.1] C:\Users\HP\.gradle\caches\transforms-3\4979397e4f043e44835502836ff610a8\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:21:17-55
+141        </provider>
+142
+143        <activity
+143-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:10:9-14:67
+144            android:name="com.gun0912.tedpermission.TedPermissionActivity"
+144-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:11:13-75
+145            android:configChanges="mcc|mnc|locale|keyboard|keyboardHidden|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection"
+145-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:12:13-144
+146            android:screenOrientation="unspecified"
+146-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:13:13-52
+147            android:theme="@style/Theme.Transparent.Permission" />
+147-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:14:13-64
+148
+149        <provider
+149-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:16:9-19:40
+150            android:name="com.gun0912.tedpermission.provider.TedPermissionProvider"
+150-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:17:13-84
+151            android:authorities="com.ministore.android.tedpermissionprovider"
+151-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:18:13-73
+152            android:exported="false" />
+152-->[io.github.ParkSangGwon:tedpermission:3.3.0] C:\Users\HP\.gradle\caches\transforms-3\e09ad9d40fd77016fbe38e2ae3753106\transformed\jetified-tedpermission-3.3.0\AndroidManifest.xml:19:13-37
+153
+154        <activity
+154-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:10:9-14:75
+155            android:name="com.gun0912.tedonactivityresult.ProxyActivity"
+155-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:11:13-73
+156            android:configChanges="mcc|mnc|locale|keyboard|keyboardHidden|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection"
+156-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:12:13-144
+157            android:screenOrientation="unspecified"
+157-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:13:13-52
+158            android:theme="@style/android:Theme.Translucent.NoTitleBar" />
+158-->[gun0912.ted:tedonactivityresult:1.0.6] C:\Users\HP\.gradle\caches\transforms-3\acde2ff0dc159f2d327838abfbb4c5af\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:14:13-72
+159
+160        <provider
+160-->[com.squareup.picasso:picasso:2.71828] C:\Users\HP\.gradle\caches\transforms-3\c7e5ce0ef2f9edc60f33ff86eff41144\transformed\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+161            android:name="com.squareup.picasso.PicassoProvider"
+161-->[com.squareup.picasso:picasso:2.71828] C:\Users\HP\.gradle\caches\transforms-3\c7e5ce0ef2f9edc60f33ff86eff41144\transformed\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+162            android:authorities="com.ministore.android.com.squareup.picasso"
+162-->[com.squareup.picasso:picasso:2.71828] C:\Users\HP\.gradle\caches\transforms-3\c7e5ce0ef2f9edc60f33ff86eff41144\transformed\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+163            android:exported="false" />
+163-->[com.squareup.picasso:picasso:2.71828] C:\Users\HP\.gradle\caches\transforms-3\c7e5ce0ef2f9edc60f33ff86eff41144\transformed\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+164        <provider
+164-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+165            android:name="androidx.startup.InitializationProvider"
+165-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+166            android:authorities="com.ministore.android.androidx-startup"
+166-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+167            android:exported="false" >
+167-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+168            <meta-data
+168-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+169                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+169-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+170                android:value="androidx.startup" />
+170-->[androidx.emoji2:emoji2:1.2.0] C:\Users\HP\.gradle\caches\transforms-3\7b79f7e4a058224274d9b5ea417be867\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+171            <meta-data
+171-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\e49fb580d7eda2494a8100e094041989\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+172                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+172-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\e49fb580d7eda2494a8100e094041989\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+173                android:value="androidx.startup" />
+173-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\HP\.gradle\caches\transforms-3\e49fb580d7eda2494a8100e094041989\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+174        </provider>
+175    </application>
+176
+177</manifest>

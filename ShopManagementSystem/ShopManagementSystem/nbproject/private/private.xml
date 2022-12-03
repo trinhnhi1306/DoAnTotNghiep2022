@@ -3,16 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/view/orders/ReturnDetailDialog.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/controller/ReturnController.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/view/imports/NewImportDialog.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/model/Return.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/model/ReturnDetail.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/view/imports/ImportsPanel.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/view/products/FeedbackDialog.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/controller/OrderController.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/view/orders/OrderPanel.java</file>
-            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/CP_231_NguyenNgocPhuongTrinh/ShopManagementSystem/ShopManagementSystem/src/view/orders/HistoryDialog.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/view/brands/BrandPanel.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/view/orders/OrderPanel.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/view/admin/AdminMainFrame.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/controller/BaseController.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/controller/PriceHistoryController.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/controller/BrandController.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/view/promotion/NewPromotionDialog.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/controller/ReturnController.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/model/Report.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/controller/ReportController.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/view/products/FeedbackDialog.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/swing/NumberRenderer.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/view/statistics/StatisticsPanel.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/view/products/PriceHistoryDialog.java</file>
+            <file>file:/C:/Users/HP/OneDrive%20-%20Sang%20ltd/Documents/Tot%20nghiep/DoAnTotNghiep2022/ShopManagementSystem/ShopManagementSystem/src/view/orders/ReturnDetailDialog.java</file>
         </group>
     </open-files>
 </project-private>

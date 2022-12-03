@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.trinh.webapi.Exception.NotFoundException;
+import com.trinh.webapi.dto.FullProduct;
 import com.trinh.webapi.model.Category;
 import com.trinh.webapi.model.Product;
 import com.trinh.webapi.repository.CategoryRepository;
@@ -122,5 +123,11 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> getAllByCategory(Integer categoryId) {
 		Category category = categoryRepository.getById(categoryId);
 		return productRepository.findAllByCategory(category);
+	}
+
+	@Override
+	public List<Product> search(String keyword) {
+		// TODO Auto-generated method stub
+		return productRepository.search(keyword);
 	}
 }

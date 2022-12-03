@@ -21,8 +21,8 @@ public class AdminMainFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        jPanel_Promotion.setBackground(jPanel_Title.getBackground());
-        UIController.showCardLayout("promotion", jPanel_CardLayout);
+        jPanel_Statistic.setBackground(jPanel_Title.getBackground());
+        UIController.showCardLayout("statistics", jPanel_CardLayout);
         jLabel_Name.setText(LoginFrame.username);
     }
 
@@ -44,6 +44,9 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_Side = new javax.swing.JPanel();
         jLabel_LogOut = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jPanel_Statistic = new javax.swing.JPanel();
+        jSeparator9 = new javax.swing.JSeparator();
+        jLabel_Statistics = new javax.swing.JLabel();
         jPanel_Promotion = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel_Promotion = new javax.swing.JLabel();
@@ -77,6 +80,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         importsPanel1 = new view.imports.ImportsPanel();
         profilePanel1 = new view.profile.ProfilePanel();
         promotionPanel1 = new view.promotion.PromotionPanel();
+        statisticsPanel1 = new view.statistics.StatisticsPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Shop Management System");
@@ -114,7 +118,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
+                    .addComponent(jLabel_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -124,7 +128,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel_Name)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel_Title.add(jPanel1, java.awt.BorderLayout.EAST);
@@ -148,8 +152,28 @@ public class AdminMainFrame extends javax.swing.JFrame {
         });
         jPanel_Side.add(jLabel_LogOut, java.awt.BorderLayout.SOUTH);
 
-        jPanel5.setPreferredSize(new java.awt.Dimension(150, 600));
+        jPanel5.setPreferredSize(new java.awt.Dimension(150, 800));
         jPanel5.setLayout(new java.awt.GridLayout(0, 1));
+
+        jPanel_Statistic.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel_Statistic.setLayout(new java.awt.BorderLayout());
+        jPanel_Statistic.add(jSeparator9, java.awt.BorderLayout.SOUTH);
+
+        jLabel_Statistics.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel_Statistics.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Statistics.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Statistics.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/statistical.png"))); // NOI18N
+        jLabel_Statistics.setText("Statistics");
+        jLabel_Statistics.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel_Statistics.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jLabel_Statistics.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_StatisticsMouseClicked(evt);
+            }
+        });
+        jPanel_Statistic.add(jLabel_Statistics, java.awt.BorderLayout.CENTER);
+
+        jPanel5.add(jPanel_Statistic);
 
         jPanel_Promotion.setBackground(new java.awt.Color(0, 204, 204));
         jPanel_Promotion.setLayout(new java.awt.BorderLayout());
@@ -336,6 +360,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_CardLayout.add(importsPanel1, "imports");
         jPanel_CardLayout.add(profilePanel1, "profile");
         jPanel_CardLayout.add(promotionPanel1, "promotion");
+        jPanel_CardLayout.add(statisticsPanel1, "statistics");
 
         getContentPane().add(jPanel_CardLayout, java.awt.BorderLayout.CENTER);
 
@@ -358,6 +383,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_Category.setBackground(jPanel_Side.getBackground());
         jPanel_Imports.setBackground(jPanel_Side.getBackground());
         jPanel_Promotion.setBackground(jPanel_Side.getBackground());
+        jPanel_Statistic.setBackground(jPanel_Side.getBackground());
         UIController.showCardLayout("order", jPanel_CardLayout);
     }//GEN-LAST:event_jLabel_OrderMouseClicked
 
@@ -371,6 +397,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_Category.setBackground(jPanel_Side.getBackground());
         jPanel_Imports.setBackground(jPanel_Side.getBackground());
         jPanel_Promotion.setBackground(jPanel_Side.getBackground());
+        jPanel_Statistic.setBackground(jPanel_Side.getBackground());
         UIController.showCardLayout("product", jPanel_CardLayout);
     }//GEN-LAST:event_jLabel_ProductMouseClicked
 
@@ -384,6 +411,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_Category.setBackground(jPanel_Side.getBackground());
         jPanel_Imports.setBackground(jPanel_Side.getBackground());
         jPanel_Promotion.setBackground(jPanel_Side.getBackground());
+        jPanel_Statistic.setBackground(jPanel_Side.getBackground());
         UIController.showCardLayout("user", jPanel_CardLayout);
     }//GEN-LAST:event_jLabel_UserMouseClicked
 
@@ -397,6 +425,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_Category.setBackground(jPanel_Side.getBackground());
         jPanel_Imports.setBackground(jPanel_Side.getBackground());
         jPanel_Promotion.setBackground(jPanel_Side.getBackground());
+        jPanel_Statistic.setBackground(jPanel_Side.getBackground());
         UIController.showCardLayout("profile", jPanel_CardLayout);
     }//GEN-LAST:event_jLabel_ProfileMouseClicked
 
@@ -410,6 +439,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_Profile.setBackground(jPanel_Side.getBackground());
         jPanel_Imports.setBackground(jPanel_Side.getBackground());
         jPanel_Promotion.setBackground(jPanel_Side.getBackground());
+        jPanel_Statistic.setBackground(jPanel_Side.getBackground());
         UIController.showCardLayout("category", jPanel_CardLayout);
     }//GEN-LAST:event_jLabel_CategoryMouseClicked
 
@@ -423,6 +453,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_Profile.setBackground(jPanel_Side.getBackground());
         jPanel_Imports.setBackground(jPanel_Side.getBackground());
         jPanel_Promotion.setBackground(jPanel_Side.getBackground());
+        jPanel_Statistic.setBackground(jPanel_Side.getBackground());
         UIController.showCardLayout("brand", jPanel_CardLayout);
     }//GEN-LAST:event_jLabel_BrandMouseClicked
 
@@ -436,6 +467,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_Category.setBackground(jPanel_Side.getBackground());
         jPanel_Profile.setBackground(jPanel_Side.getBackground());
         jPanel_Promotion.setBackground(jPanel_Side.getBackground());
+        jPanel_Statistic.setBackground(jPanel_Side.getBackground());
         UIController.showCardLayout("imports", jPanel_CardLayout);
     }//GEN-LAST:event_jLabel_ImportsMouseClicked
 
@@ -449,8 +481,23 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jPanel_User.setBackground(jPanel_Side.getBackground());
         jPanel_Category.setBackground(jPanel_Side.getBackground());
         jPanel_Profile.setBackground(jPanel_Side.getBackground());
+        jPanel_Statistic.setBackground(jPanel_Side.getBackground());
         UIController.showCardLayout("promotion", jPanel_CardLayout);
     }//GEN-LAST:event_jLabel_PromotionMouseClicked
+
+    private void jLabel_StatisticsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_StatisticsMouseClicked
+        // TODO add your handling code here:
+        jPanel_Statistic.setBackground(jPanel_Title.getBackground());
+        jPanel_Imports.setBackground(jPanel_Side.getBackground());
+        jPanel_Brand.setBackground(jPanel_Side.getBackground());
+        jPanel_Order.setBackground(jPanel_Side.getBackground());
+        jPanel_Product.setBackground(jPanel_Side.getBackground());
+        jPanel_User.setBackground(jPanel_Side.getBackground());
+        jPanel_Category.setBackground(jPanel_Side.getBackground());
+        jPanel_Profile.setBackground(jPanel_Side.getBackground());
+        jPanel_Promotion.setBackground(jPanel_Side.getBackground());
+        UIController.showCardLayout("statistics", jPanel_CardLayout);
+    }//GEN-LAST:event_jLabel_StatisticsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -503,6 +550,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_Product;
     private javax.swing.JLabel jLabel_Profile;
     private javax.swing.JLabel jLabel_Promotion;
+    private javax.swing.JLabel jLabel_Statistics;
     private javax.swing.JLabel jLabel_User;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
@@ -515,6 +563,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_Profile;
     private javax.swing.JPanel jPanel_Promotion;
     private javax.swing.JPanel jPanel_Side;
+    private javax.swing.JPanel jPanel_Statistic;
     private javax.swing.JPanel jPanel_Title;
     private javax.swing.JPanel jPanel_User;
     private javax.swing.JSeparator jSeparator1;
@@ -525,10 +574,12 @@ public class AdminMainFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private view.orders.OrderPanel orderPanel1;
     private view.products.PanelProduct panelProduct1;
     private view.profile.ProfilePanel profilePanel1;
     private view.promotion.PromotionPanel promotionPanel1;
+    private view.statistics.StatisticsPanel statisticsPanel1;
     private view.users.UserPanel userPanel1;
     // End of variables declaration//GEN-END:variables
 }
