@@ -65,4 +65,10 @@ public class OrderServiceImpl implements OrderService {
 		// TODO Auto-generated method stub
 		return orderRepository.findByUserOrderByDateDesc(user);
 	}
+
+	@Override
+	public List<Order> findByStatusOrderAndShipperByDateDesc(OrderStatus orderStatus, User shipper) {
+		// TODO Auto-generated method stub
+		return orderRepository.findByShipperAndStatusOrderByDateDesc(shipper, orderStatus);
+	}
 }

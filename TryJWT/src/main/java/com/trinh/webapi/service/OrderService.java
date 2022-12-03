@@ -11,6 +11,7 @@ public interface OrderService {
 
 	public Order findById(Integer id);
 	public List<Order> findByStatusOrderByDateDesc(OrderStatus orderStatus);
+	public List<Order> findByStatusOrderAndShipperByDateDesc(OrderStatus orderStatus,User shipper);
 	public List<OrderDetail> findOrderDetailByOrderId(Integer orderId);
 	public Order updateOrder(Order order, Integer statusId);
 	public List<Order> findByUserAndStatusOrderByDateDesc(User user, OrderStatus orderStatus);
