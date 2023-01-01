@@ -118,6 +118,9 @@
     <orderEntry type="library" scope="TEST" name="Gradle: gun0912.ted:tedbottompicker:2.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: io.github.nikartm:image-support:2.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.PhilJay:MPAndroidChart:v3.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.paypal.sdk:paypal-android-sdk:2.14.2@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.card:android-sdk:5.3.4@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.momo-wallet:mobile-sdk:1.0.7@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="Mini_Store.app.main" />
 </module>

@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 
+import com.trinh.webapi.dto.BrandDTO;
+import com.trinh.webapi.dto.CategoryDTO;
 import com.trinh.webapi.model.Brand;
 
 public interface BrandService {
@@ -15,4 +17,5 @@ public interface BrandService {
 	public void addBrand(Brand brand);
 	public void deleteBrand(Brand brand);
 	public void updateBrand(Brand brand);
+	public List<BrandDTO> findMostPurchasedBrand();
 }

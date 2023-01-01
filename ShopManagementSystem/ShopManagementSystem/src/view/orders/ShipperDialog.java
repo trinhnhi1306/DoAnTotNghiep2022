@@ -24,6 +24,8 @@ public class ShipperDialog extends javax.swing.JDialog {
 
     private UserController uc;
     private List<UserDB> listUser;
+    private DefaultTableModel dtm;
+    private SimpleDateFormat sdf;
 
     /**
      * Creates new form ImportHistoryDialog
@@ -32,24 +34,14 @@ public class ShipperDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         uc = new UserController();
-        listUser = uc.getUserByRole("shipper");
-        DefaultTableModel dtm = (DefaultTableModel) jTable_User.getModel();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-        Vector vt;
-        int sum = 0;
-        for (UserDB f : listUser) {
-            vt = new Vector();
-            vt.add(f.getId());
-            vt.add(f.getUsername());
-            vt.add(f.getLastName());
-            vt.add(f.getFirstName());
-            vt.add(f.getEmail());
-            vt.add(f.getPhone());
-            dtm.addRow(vt);
-        }
+        
+        dtm = (DefaultTableModel) jTable_User.getModel();
+        sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        
         this.getContentPane().setBackground(Color.WHITE);
         setLocationRelativeTo(null);
         
+        loadShipper();
     }
 
     /**
@@ -255,6 +247,21 @@ public class ShipperDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void loadShipper(){
+        listUser = uc.getUserByRole("shipper");
+        Vector vt;
+        int sum = 0;
+        for (UserDB f : listUser) {
+            vt = new Vector();
+            vt.add(f.getId());
+            vt.add(f.getUsername());
+            vt.add(f.getLastName());
+            vt.add(f.getFirstName());
+            vt.add(f.getEmail());
+            vt.add(f.getPhone());
+            dtm.addRow(vt);
+        }
+    }
     private void jTable_UserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_UserMouseClicked
         // TODO add your handling code here:
         int selectedRow = jTable_User.getSelectedRow();

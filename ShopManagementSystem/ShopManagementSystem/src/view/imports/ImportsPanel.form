@@ -179,8 +179,8 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jDateChooser_ImportHistoryTo" max="32767" attributes="0"/>
-                      <Component id="jDateChooser_ImportHistoryFrom" pref="177" max="32767" attributes="0"/>
+                      <Component id="jDateChooser_FinishDate" max="32767" attributes="0"/>
+                      <Component id="jDateChooser_StartDate" pref="177" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -199,12 +199,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel_DayImportHistoryFrom" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jDateChooser_ImportHistoryFrom" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jDateChooser_StartDate" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel_DayImportHistoryTo" alignment="1" pref="34" max="32767" attributes="0"/>
-                              <Component id="jDateChooser_ImportHistoryTo" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jDateChooser_FinishDate" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -238,7 +238,7 @@
             <Property name="text" type="java.lang.String" value="To"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser_ImportHistoryFrom">
+        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser_StartDate">
           <Properties>
             <Property name="date" type="java.util.Date" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new java.util.Date()" type="code"/>
@@ -249,7 +249,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser_ImportHistoryTo">
+        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser_FinishDate">
           <Properties>
             <Property name="date" type="java.util.Date" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new java.util.Date()" type="code"/>

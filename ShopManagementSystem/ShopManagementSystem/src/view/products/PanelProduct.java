@@ -12,6 +12,8 @@ import java.awt.Image;
 import java.io.File;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -59,6 +61,19 @@ public class PanelProduct extends javax.swing.JPanel {
     private File selectedFile;
     private String imageName;
     private Boolean checkPrice = false;
+    
+    class Multi extends Thread {
+        public void run() {
+            while(true) {
+                try {
+                    sleep(2000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(PanelProduct.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                loadData(output.getPage());
+            }
+        }
+    }
 
     private enum Mode {
         ADD,
@@ -71,6 +86,7 @@ public class PanelProduct extends javax.swing.JPanel {
     private FeedbackDialog feedbackDialog;
     private ProductDeletedDialog productDeletedDialog;
     private PriceHistoryDialog priceHistoryDialog;
+    private ImportHistoryDialog importHistoryDialog;
 
     /**
      * Creates new form PanelProduct
@@ -91,6 +107,8 @@ public class PanelProduct extends javax.swing.JPanel {
         setEditableForAll(false);
         TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(jTable_Product.getModel());
         jTable_Product.setRowSorter(sorter);
+        Multi t1 = new Multi();
+        t1.start();
     }
 
     /**
@@ -152,6 +170,8 @@ public class PanelProduct extends javax.swing.JPanel {
         jButton_NextPage = new javax.swing.JButton();
         jLabel_Page = new javax.swing.JLabel();
         jButton_Feedback = new javax.swing.JButton();
+        jButton_Refresh = new javax.swing.JButton();
+        jButton_Feedback1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -298,7 +318,7 @@ public class PanelProduct extends javax.swing.JPanel {
                                 .addComponent(jSpinner_Discount, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel_PriceHistory)
@@ -320,7 +340,7 @@ public class PanelProduct extends javax.swing.JPanel {
                         .addGap(42, 42, 42)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField_Sold, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)))
+                        .addComponent(jTextField_Sold)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addGap(78, 78, 78)
@@ -332,7 +352,7 @@ public class PanelProduct extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 117, Short.MAX_VALUE))
+                        .addGap(0, 73, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jComboBox_Brand, 0, 235, Short.MAX_VALUE)
@@ -341,7 +361,7 @@ public class PanelProduct extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton_Category, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton_Brand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton_ChooseImage, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))))
@@ -381,22 +401,20 @@ public class PanelProduct extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel16)
+                                        .addComponent(jLabel_Category)
+                                        .addComponent(jComboBox_Category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel18)
+                                        .addComponent(jSpinner_Price))
+                                    .addComponent(jSpinner_Discount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 9, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(jLabel6)
-                                                .addComponent(jLabel8)
-                                                .addComponent(jLabel16)
-                                                .addComponent(jLabel_Category)
-                                                .addComponent(jComboBox_Category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel18)
-                                                .addComponent(jSpinner_Price))))
-                                    .addComponent(jSpinner_Discount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabel_PriceHistory)))))
+                                            .addComponent(jLabel_PriceHistory, javax.swing.GroupLayout.Alignment.TRAILING))))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton_Brand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -599,6 +617,23 @@ public class PanelProduct extends javax.swing.JPanel {
             }
         });
 
+        jButton_Refresh.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jButton_Refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh30px.png"))); // NOI18N
+        jButton_Refresh.setText("Refresh");
+        jButton_Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_RefreshActionPerformed(evt);
+            }
+        });
+
+        jButton_Feedback1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jButton_Feedback1.setText("Import History");
+        jButton_Feedback1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Feedback1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -611,9 +646,13 @@ public class PanelProduct extends javax.swing.JPanel {
                         .addGap(14, 14, 14)
                         .addComponent(jLabel14)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField_NameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
-                        .addComponent(jButton_Feedback)
+                        .addComponent(jTextField_NameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton_Feedback1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_Refresh)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton_Feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton_ExportExcel)
                         .addGap(18, 18, 18)
@@ -641,11 +680,13 @@ public class PanelProduct extends javax.swing.JPanel {
                         .addComponent(jTextField_NameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14)
                         .addComponent(jButton_ExportExcel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_Feedback, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButton_Feedback, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_Feedback1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -686,7 +727,7 @@ public class PanelProduct extends javax.swing.JPanel {
         jTextField_Specification.setText("");
         jComboBox_Category.setSelectedIndex(-1);
         jComboBox_Brand.setSelectedIndex(-1);
-        jSpinner_Quantity.setValue(5);
+        jSpinner_Quantity.setValue(0);
         jSpinner_Price.setValue(0);
         jSpinner_Discount.setValue(0);
     }
@@ -698,7 +739,8 @@ public class PanelProduct extends javax.swing.JPanel {
         jTextField_Specification.setEditable(editable);
         jComboBox_Category.setEnabled(editable);
         jComboBox_Brand.setEnabled(editable);
-//        jSpinner_Quantity.setEnabled(editable);
+        if(mode == Mode.MODIFY || mode == Mode.FREE)
+            jSpinner_Quantity.setEnabled(editable);
         jSpinner_Price.setEnabled(editable);
 //        jSpinner_Discount.setEnabled(editable);
         jTextField_NameSearch.setEnabled(!editable);
@@ -728,7 +770,7 @@ public class PanelProduct extends javax.swing.JPanel {
 
         Brand brand = (Brand) jComboBox_Brand.getSelectedItem();
         Category category = (Category) jComboBox_Category.getSelectedItem();
-
+        
         if (mode == Mode.ADD) {
             Product product = new Product();
             product.setName(name);
@@ -759,6 +801,11 @@ public class PanelProduct extends javax.swing.JPanel {
                                     JOptionPane.showMessageDialog(null, pc.convertResponse(res.getMessage()).getMessage());
                                     if (res.getResponseCode() == 200) {
                                         loadData(output.getPage());
+                                        mode = Mode.FREE;
+                                        UIController.showCardLayout("cardFirst", jPanel_Card);
+                                        setEditableForAll(false);
+                                        jTable_Product.setEnabled(true);
+                                        selectedFile = null;
                                     } else {
                                         return;
                                     }
@@ -783,12 +830,23 @@ public class PanelProduct extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, pc.convertResponse(response.getMessage()).getMessage());
                 if (response.getResponseCode() == 200) {
                     loadData(output.getPage());
+                    mode = Mode.FREE;
+                    UIController.showCardLayout("cardFirst", jPanel_Card);
+                    setEditableForAll(false);
+                    jTable_Product.setEnabled(true);
+                    selectedFile = null;
                 } else {
                     return;
                 }
             }
         }
         if (mode == Mode.MODIFY) {
+            float lastedImportPrice = pc.getLastedImportPrice(jTextField_ID.getText());
+            if(newPrice <= lastedImportPrice) {
+                int luaChon = JOptionPane.showConfirmDialog(this, "Giá bán nhỏ hơn/bằng giá nhập hàng mới nhất (" + lastedImportPrice + "), bạn có chắc chắn muốn lưu?");
+                if (luaChon == JOptionPane.CANCEL_OPTION || luaChon == JOptionPane.NO_OPTION) 
+                    return;
+            }
             Product product = new Product();
             product.setProductId(Integer.parseInt(jTextField_ID.getText()));
             product.setName(name);
@@ -819,6 +877,11 @@ public class PanelProduct extends javax.swing.JPanel {
                                     JOptionPane.showMessageDialog(null, pc.convertResponse(res.getMessage()).getMessage());
                                     if (res.getResponseCode() == 200) {
                                         loadData(output.getPage());
+                                        mode = Mode.FREE;
+                                        UIController.showCardLayout("cardFirst", jPanel_Card);
+                                        setEditableForAll(false);
+                                        jTable_Product.setEnabled(true);
+                                        selectedFile = null;
                                     } else {
                                         return;
                                     }
@@ -843,16 +906,17 @@ public class PanelProduct extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, pc.convertResponse(response.getMessage()).getMessage());
                 if (response.getResponseCode() == 200) {
                     loadData(output.getPage());
+                    mode = Mode.FREE;
+                    UIController.showCardLayout("cardFirst", jPanel_Card);
+                    setEditableForAll(false);
+                    jTable_Product.setEnabled(true);
+                    selectedFile = null;
                 } else {
                     return;
                 }
             }
         }
-        mode = Mode.FREE;
-        UIController.showCardLayout("cardFirst", jPanel_Card);
-        setEditableForAll(false);
-        jTable_Product.setEnabled(true);
-        selectedFile = null;
+        
     }//GEN-LAST:event_jButton_OKActionPerformed
 
     private void jButton_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CancelActionPerformed
@@ -1109,6 +1173,25 @@ public class PanelProduct extends javax.swing.JPanel {
         priceHistoryDialog.setVisible(true);
     }//GEN-LAST:event_jLabel_PriceHistoryMouseClicked
 
+    private void jButton_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RefreshActionPerformed
+        // TODO add your handling code here:
+        loadData(output.getPage());
+    }//GEN-LAST:event_jButton_RefreshActionPerformed
+
+    private void jButton_Feedback1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Feedback1ActionPerformed
+        // TODO add your handling code here:
+        String str = jTextField_ID.getText();
+        if(str.equals("")) {
+            JOptionPane.showMessageDialog(this, "No product selected");
+            return;
+        }
+        selectedProductId = str;
+        selectedProductName = jTextField_Name.getText();
+        
+        importHistoryDialog = new ImportHistoryDialog(null, true);
+        importHistoryDialog.setVisible(true);
+    }//GEN-LAST:event_jButton_Feedback1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Add;
     private javax.swing.JButton jButton_Brand;
@@ -1118,10 +1201,12 @@ public class PanelProduct extends javax.swing.JPanel {
     private javax.swing.JButton jButton_Clear;
     private javax.swing.JButton jButton_ExportExcel;
     private javax.swing.JButton jButton_Feedback;
+    private javax.swing.JButton jButton_Feedback1;
     private javax.swing.JButton jButton_Modify;
     private javax.swing.JButton jButton_NextPage;
     private javax.swing.JButton jButton_OK;
     private javax.swing.JButton jButton_PreviousPage;
+    private javax.swing.JButton jButton_Refresh;
     private javax.swing.JButton jButton_Remove;
     private javax.swing.JComboBox<Brand> jComboBox_Brand;
     private javax.swing.JComboBox<Category> jComboBox_Category;

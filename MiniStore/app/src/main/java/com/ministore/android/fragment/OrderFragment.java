@@ -37,6 +37,7 @@ import retrofit2.Response;
 public class OrderFragment extends Fragment implements OrderAdapter.OnItemActionListener {
 
     private static final String KEY_ORDER_STATUS = "order_status";
+    public static int STATUS_ID;
 
     private View view;
     private RecyclerView rcvOrders;
@@ -95,6 +96,8 @@ public class OrderFragment extends Fragment implements OrderAdapter.OnItemAction
         int userId = MyApplication.getUserId();
         String auth = MyApplication.getAuthorization();
         int statusId = orderStatus.getStatus().getId();
+        STATUS_ID = orderStatus.getStatus().getId();
+//        Toast.makeText(getContext(), STATUS_ID + "", Toast.LENGTH_SHORT).show();
         ApiService.apiService.getOrdersByUserIdAndStatusIdOrderByDateDesc(auth, userId, statusId)
                 .enqueue(new Callback<List<Order>>() {
                     @Override

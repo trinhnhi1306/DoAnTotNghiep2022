@@ -102,7 +102,7 @@ public class ProductController {
 		return ResponseEntity.ok(fullProducts);
 	}
 
-	@RequestMapping(value = "image/{imageName}", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+	@RequestMapping(value = "image/{imageName}", method = RequestMethod.GET, produces = {MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE, MediaType.IMAGE_GIF_VALUE})
 	public ResponseEntity<?> getImage(@PathVariable("imageName") String imageName) throws IOException {
 
 		try {
@@ -154,8 +154,10 @@ public class ProductController {
 		output.setTotalPage(totalPage);
 		
 		List<FullProduct> fullProducts = new ArrayList<>();
-		for(Product p : products) 
-			fullProducts.add(new FullProduct(p, priceHistoryService.getLatestPrice(p), promotionService.getCurrentPromotionByProduct(p)));
+		for(Product p : products) {
+			if(p.getQuantity() > p.getSoldQuantity())
+				fullProducts.add(new FullProduct(p, priceHistoryService.getLatestPrice(p), promotionService.getCurrentPromotionByProduct(p)));
+		}
 
 		output.setListResult(fullProducts);
 		return ResponseEntity.ok(output);

@@ -238,6 +238,7 @@ id buttonThoatHiem
 id buttonThoatOTP
 id cardView
 id card_view
+id cash
 id cb_all_items
 id cb_item
 id cb_statusP
@@ -336,6 +337,7 @@ id lottie_animation_view
 id lvChoXuLy
 id lvImport
 id lvImportDetail
+id momo
 id nav_account
 id nav_admin
 id nav_cart
@@ -435,6 +437,7 @@ id tv_note
 id tv_num_comment
 id tv_numrate_summary
 id tv_order_id
+id tv_payment_type
 id tv_price
 id tv_price_after_discount
 id tv_price_before_discount
@@ -496,6 +499,7 @@ layout activity_address
 layout activity_cart
 layout activity_change_password
 layout activity_check_out
+layout activity_choose_pay
 layout activity_confirm_return
 layout activity_detail
 layout activity_edit_address
@@ -557,11 +561,15 @@ menu _menu_action
 menu menu_bottom_nav
 menu menu_main
 menu menu_nav
+mipmap ic_cash
 mipmap ic_cute_book_pencil_cartoon
 mipmap ic_cute_book_pencil_cartoon_foreground
 mipmap ic_cute_book_pencil_cartoon_round
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+mipmap ic_momo
+mipmap ic_zalopay
 raw pencil_drawing
 string OTP_sented
 string _menu_delete
@@ -583,6 +591,7 @@ string available
 string calculation_unit
 string cancel
 string cart
+string cash
 string check_out
 string choose_product
 string clear
@@ -614,6 +623,7 @@ string mandatory
 string may_need
 string menu_settings
 string method
+string momo
 string most_purchased
 string name
 string nav_account

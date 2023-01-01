@@ -77,6 +77,14 @@ public class ManagePromotionController {
 		return ResponseEntity.ok(promotion);
 	}
 	
+	@GetMapping(value = { "/search/{startDate}/{finishDate}" })
+	public ResponseEntity<?> searchPromotion(@PathVariable("startDate") String startDate, @PathVariable("finishDate") String finishDate) {
+		
+		return ResponseEntity.ok(promotionService.findPromotion(
+				promotionService.convertStringToDate(startDate),
+				promotionService.convertStringToDate(finishDate)));
+	}
+	
 	@GetMapping(value = { "/{productId}/{startDate}/{finishDate}" })
 	public ResponseEntity<?> checkPromotionByProductId(@PathVariable("productId") Integer productId,
 			@PathVariable("startDate") String startDate,

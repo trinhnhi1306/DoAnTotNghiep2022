@@ -3,6 +3,8 @@ package com.trinh.webapi.service;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
+
+import com.trinh.webapi.model.ImportDetail;
 import com.trinh.webapi.model.Product;
 
 
@@ -24,4 +26,6 @@ public interface ProductService {
 	public void deleteById(Integer id);
 	
 	public List<Product> search(String keyword);
+	
+	public List<ImportDetail> getImportPrice(Integer id);
 }

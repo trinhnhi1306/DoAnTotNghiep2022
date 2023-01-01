@@ -31,6 +31,7 @@ anim fragment_fast_out_extra_slow_in
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim rotator
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1303,6 +1304,7 @@ color bg_btn_blue
 color bg_btn_gray
 color bg_btn_green
 color bg_btn_red
+color bg_color_url
 color black
 color blue_active
 color blue_bg_light
@@ -1317,6 +1319,7 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color btn_selected
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -1324,6 +1327,10 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color checkbox_themeable_attribute_color
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
+color color_url
 color custom_color_button
 color custom_color_button_cancel
 color dark_blue
@@ -1819,6 +1826,7 @@ color material_timepicker_button_stroke
 color material_timepicker_clock_text_color
 color material_timepicker_clockface
 color material_timepicker_modebutton_tint
+color momo_color
 color mtrl_btn_bg_color_selector
 color mtrl_btn_ripple_color
 color mtrl_btn_stroke_color_selector
@@ -1902,6 +1910,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color statusbar_default
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1918,6 +1927,7 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
 color white
 color yellow
 color yellow_active
@@ -2005,6 +2015,8 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
 dimen badge_corner_radius
 dimen badge_height_padding
@@ -2675,6 +2687,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circular_progress_bar
 drawable co_anh
 drawable co_vn
 drawable default_icon
@@ -2743,6 +2756,8 @@ drawable ic_playlist_remove
 drawable ic_playlist_remove_white
 drawable ic_price
 drawable ic_quantity
+drawable ic_reload
+drawable ic_reload_press
 drawable ic_remove
 drawable ic_search
 drawable ic_settings
@@ -2807,6 +2822,9 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable momo_back
+drawable momo_lock_symbol
+drawable momoclose
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -2832,6 +2850,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable person_background_oval
+drawable rounded_corner
 drawable rounded_rect
 drawable search_background_oval
 drawable shadow
@@ -3032,6 +3051,7 @@ id cancel_button
 id cardView
 id card_view
 id carryVelocity
+id cash
 id cb_all_items
 id cb_item
 id cb_statusP
@@ -3057,6 +3077,7 @@ id chronometer
 id circle_center
 id circle_indicator
 id circle_indicator_poster
+id circular_progress_bar
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3183,6 +3204,7 @@ id fixed_bottom_navigation_icon
 id fixed_bottom_navigation_icon_container
 id fixed_bottom_navigation_title
 id fl_container
+id fl_country_not_found
 id flip
 id floating
 id forever
@@ -3223,6 +3245,9 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imgBack
+id imgClose
+id imgReload
 id img_User
 id img_UserItem
 id img_anh
@@ -3280,6 +3305,9 @@ id line3
 id linear
 id listMode
 id list_item
+id ll_progressbar_circle
+id lnBack
+id lnReload
 id logo
 id lottie_animation_view
 id lottie_layer_name
@@ -3318,6 +3346,7 @@ id mode_fixed
 id mode_fixed_no_title
 id mode_shifting
 id mode_shifting_no_title
+id momo
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3395,6 +3424,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id popup_processing_bar_tv
 id position
 id postLayout
 id progress_bar
@@ -3603,6 +3633,7 @@ id tvAddressO
 id tvDate
 id tvDateO
 id tvRefundType
+id tvTitle
 id tvTotalPrice
 id tvTotalPriceO
 id tvUsername
@@ -3627,6 +3658,7 @@ id tv_note
 id tv_num_comment
 id tv_numrate_summary
 id tv_order_id
+id tv_payment_type
 id tv_price
 id tv_price_after_discount
 id tv_price_before_discount
@@ -3673,6 +3705,8 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id webView
+id webViewMapBank
 id west
 id withText
 id withinBounds
@@ -3805,6 +3839,7 @@ layout activity_address
 layout activity_cart
 layout activity_change_password
 layout activity_check_out
+layout activity_choose_pay
 layout activity_confirm_return
 layout activity_detail
 layout activity_edit_address
@@ -3896,6 +3931,7 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
+layout momo_webview_activity
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -3942,6 +3978,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout popup_processing_bar
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -3972,11 +4009,15 @@ menu _menu_action
 menu menu_bottom_nav
 menu menu_main
 menu menu_nav
+mipmap ic_cash
 mipmap ic_cute_book_pencil_cartoon
 mipmap ic_cute_book_pencil_cartoon_foreground
 mipmap ic_cute_book_pencil_cartoon_round
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+mipmap ic_momo
+mipmap ic_zalopay
 plurals mtrl_badge_content_description
 raw pencil_drawing
 string OTP_sented
@@ -4030,6 +4071,7 @@ string bottomsheet_action_expand_halfway
 string calculation_unit
 string cancel
 string cart
+string cash
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -4111,6 +4153,7 @@ string material_timepicker_text_input_mode_description
 string may_need
 string menu_settings
 string method
+string momo
 string most_purchased
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
@@ -4229,6 +4272,7 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
+style AppTheme
 style BadgeText
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
@@ -5286,6 +5330,7 @@ style Widget_Support_CoordinatorLayout
 style detail_content_style
 style detail_header_style
 style large_title
+style myDialog_2
 style roundedImageViewRounded
 style topFrame
 style tv_content_edit_address

@@ -41,6 +41,7 @@ import retrofit2.Response;
 
 public class CheckOutActivity extends AppCompatActivity implements AddressAdapter.OnItemClickListener, MyApplication.OnCartActionListener {
 
+    public static String token = "";
     private Toolbar toolbar;
     private View layoutNoAddress;
     private View itemAddress;
@@ -167,8 +168,13 @@ public class CheckOutActivity extends AppCompatActivity implements AddressAdapte
                                             for (Cart cart : MyApplication.cartAdapter.getSelectedCartList()) {
                                                 MyApplication.editCart(cart.getProduct(), 0, CheckOutActivity.this);
                                             }
-                                            MyApplication.goToMainActivity(CheckOutActivity.this);
-                                            finishAffinity();
+//                                            MyApplication.goToMainActivity(CheckOutActivity.this);
+//                                            finishAffinity();
+                                            Intent intent = new Intent(CheckOutActivity.this, ChoosePayActivity.class);
+                                            intent.putExtra("orderId", order1.getOrderId());
+                                            intent.putExtra("totalPrice", order1.getTotalPrice());
+                                            startActivity(intent);
+
                                         }
                                         else {
                                             Gson gson = new GsonBuilder().create();

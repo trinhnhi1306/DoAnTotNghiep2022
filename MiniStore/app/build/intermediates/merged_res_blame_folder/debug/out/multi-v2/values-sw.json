@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ministore.android.app-mergeDebugResources-38:/values-sw/values-sw.xml",
+            "outputFile": "com.ministore.android.app-mergeDebugResources-39:/values-sw/values-sw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\1657eaacfdf73cb5b94d8778151083b3\\transformed\\material-1.6.1\\res\\values-sw\\values-sw.xml",

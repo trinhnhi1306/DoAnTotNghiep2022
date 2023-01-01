@@ -36,21 +36,36 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 	}
 
 	@Override
-	public boolean updateSoldQuantityByOrderDetail(List<OrderDetail> orderDetails) {
-		for(OrderDetail item : orderDetails)
-		{
-			Product product = item.getProduct();
-			if(product.getSoldQuantity() == product.getQuantity())
-				return false;
+	public boolean updateSoldQuantityByOrderDetail(List<OrderDetail> orderDetails, int type) {
+		/***
+		 * type = 1: cộng thêm vào số lượng bán
+		 * type = 2: trừ bớt số lượng bán
+		 */
+		if(type == 1) {
+			for(OrderDetail item : orderDetails)
+			{
+				Product product = item.getProduct();
+				if(product.getSoldQuantity() == product.getQuantity())
+					return false;
+			}
+			
+			for(OrderDetail item : orderDetails)
+			{
+				Product product = item.getProduct();
+				product.setSoldQuantity(product.getSoldQuantity() + item.getQuantity());
+				productRepository.save(product);
+			}
+			return true;
 		}
-		
-		for(OrderDetail item : orderDetails)
-		{
-			Product product = item.getProduct();
-			product.setSoldQuantity(product.getSoldQuantity() + item.getQuantity());
-			productRepository.save(product);
+		else {
+			for(OrderDetail item : orderDetails)
+			{
+				Product product = item.getProduct();
+				product.setSoldQuantity(product.getSoldQuantity() - item.getQuantity());
+				productRepository.save(product);
+			}
+			return true;
 		}
-		return true;
 	}
 
 	@Override

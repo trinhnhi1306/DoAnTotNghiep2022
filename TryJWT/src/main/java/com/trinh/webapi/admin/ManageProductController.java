@@ -1,7 +1,10 @@
 package com.trinh.webapi.admin;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -22,8 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.trinh.webapi.Exception.AppUtils;
+import com.trinh.webapi.dto.FullProduct;
+import com.trinh.webapi.dto.ProductOutput;
 import com.trinh.webapi.model.Brand;
 import com.trinh.webapi.model.Category;
+import com.trinh.webapi.model.ImportDetail;
 import com.trinh.webapi.model.PriceHistory;
 import com.trinh.webapi.model.Product;
 import com.trinh.webapi.model.User;
@@ -31,6 +37,7 @@ import com.trinh.webapi.service.BrandService;
 import com.trinh.webapi.service.CategoryService;
 import com.trinh.webapi.service.PriceHistoryService;
 import com.trinh.webapi.service.ProductService;
+import com.trinh.webapi.service.PromotionService;
 import com.trinh.webapi.service.UserService;
 
 
@@ -47,12 +54,78 @@ public class ManageProductController {
 
 	@Autowired
 	CategoryService categoryService;
+	
+	@Autowired
+	PromotionService promotionService;
 
 	@Autowired
 	BrandService brandService;
 	
 	@Autowired
 	PriceHistoryService priceHistoryService;
+	
+	@GetMapping("/lasted-import-price/{id}")
+	public ResponseEntity<?> getLastedImportPrice(@PathVariable("id") Integer id){
+		List<ImportDetail> details = productService.getImportPrice(id);
+		if(details.size() != 0)
+			return AppUtils.returnJS(HttpStatus.OK, details.get(0).getPrice() + "", null);
+		else
+			return AppUtils.returnJS(HttpStatus.OK, "0.0", null);
+	}
+	
+	@GetMapping(value = { "import-history/{productId}" })
+	public ResponseEntity<?> getImportHistory(@PathVariable("productId") Integer productId) {
+		
+		return ResponseEntity.ok(productService.getImportPrice(productId));
+	}
+	
+	@GetMapping("")
+	public ResponseEntity<ProductOutput> findProducts(
+			@RequestParam(value = "pageNo", required = false) Optional<Integer> pPageNo,
+			@RequestParam(value = "pageSize", required = false) Optional<Integer> pPageSize,
+			@RequestParam(value = "sortField", required = false) Optional<String> pSortField,
+			@RequestParam(value = "sortDirection", required = false) Optional<String> pSortDir,
+			@RequestParam(value = "categoryId", required = false) Optional<Integer> pCategoryId) {
+		int pageNo = 1;
+		int pageSize = 10;
+		String sortField = "id";
+		String sortDirection = "ASC";
+		if (pPageNo.isPresent()) {
+			pageNo = pPageNo.get();
+		}
+		if (pPageSize.isPresent()) {
+			pageSize = pPageSize.get();
+		}
+		if (pSortField.isPresent()) {
+			sortField = pSortField.get();
+		}
+		if (pSortDir.isPresent()) {
+			sortDirection = pSortDir.get();
+		}
+
+		int totalPage;
+		List<Product> products = new ArrayList<Product>();
+		if (pCategoryId.isPresent()) {
+			Integer categoryId = pCategoryId.get();
+			totalPage = (int) Math.ceil((double) (productService.getCountByCategoryId(categoryId)) / pageSize);
+			products = productService.getAllByCategoryId(categoryId, pageNo, pageSize, sortField, sortDirection);
+		} else {
+			totalPage = (int) Math.ceil((double) (productService.getCount()) / pageSize);
+			products = productService.getAllByStatus(true, pageNo, pageSize, sortField, sortDirection);
+		}
+
+		ProductOutput output = new ProductOutput();
+		output.setPage(pageNo);
+		output.setTotalPage(totalPage);
+		
+		List<FullProduct> fullProducts = new ArrayList<>();
+		for(Product p : products) {
+			fullProducts.add(new FullProduct(p, priceHistoryService.getLatestPrice(p), promotionService.getCurrentPromotionByProduct(p)));
+		}
+
+		output.setListResult(fullProducts);
+		return ResponseEntity.ok(output);
+	}
 	
 	@PostMapping(value = "/{price}")
 	public ResponseEntity<?> postProduct(Principal principal, @PathVariable("price") Float price, @Valid @RequestBody Product product, BindingResult bindingResult) {

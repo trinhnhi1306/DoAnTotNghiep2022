@@ -15,9 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ministore.android.MyApplication;
 import com.ministore.android.R;
 import com.ministore.android.api.ApiService;
+import com.ministore.android.fragment.OrderFragment;
 import com.ministore.android.model.Order;
 import com.ministore.android.model.OrderDetail;
 import com.ministore.android.model.OrderSummaryDTO;
+import com.ministore.android.model.Return;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -61,8 +63,15 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.tvTotal.setText(String.format("%s đ", MyApplication.formatNumber(order.getTotalPrice())));
         holder.tvDate.setText(String.format(MyApplication.formatDate(order.getDate())));
         String auth = MyApplication.getAuthorization();
-        if(order.getStatus().getId() == 9)
+        if(OrderFragment.STATUS_ID == 9) {
             holder.tvStatus.setVisibility(View.VISIBLE);
+
+            if (order.getStatus().getId() == 8)
+                holder.tvStatus.setText("Approved");
+
+            if (order.getStatus().getId() == 7)
+                holder.tvStatus.setText("Unapproved");
+        }
         ApiService.apiService.getOrderSummaryByOrderId(auth, order.getOrderId())
                 .enqueue(new Callback<OrderSummaryDTO>() {
                     @Override
@@ -93,7 +102,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
                                 onItemActionListener.onActionButtonClick(order);
                             }
                         });
-                        if(order.getStatus().getId() != 9 && order.getStatus().getId() != 8) {
+                        if(OrderFragment.STATUS_ID != 9 && order.getStatus().getId() != 3) {
                             MyApplication.setActionButton(holder.btnAction, order.getStatus().getId());
                             holder.btnAction.setOnClickListener(view -> {
                                 if (onItemActionListener != null) {

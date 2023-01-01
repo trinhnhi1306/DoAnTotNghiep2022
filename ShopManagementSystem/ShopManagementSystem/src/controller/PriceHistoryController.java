@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Brand;
+import model.ImportDetail;
 import model.PriceHistory;
 import model.Response;
 import utils.ConnectAPI;
@@ -22,10 +23,13 @@ import utils.ConnectAPI;
  */
 public class PriceHistoryController extends BaseController{
     
+    private String getImportHistory;
+    
     public PriceHistoryController() {
         getOneByID = "/api/admin/product/price-history/%s/%s";
         getAll = "/api/admin/product/price-history/";
         addOne = "/api/admin/product/price-history";
+        getImportHistory = "/api/admin/product/import-history/";
     }
     
     public PriceHistory getPriceByOption(String option, String id) {
@@ -46,6 +50,19 @@ public class PriceHistoryController extends BaseController{
         try {
             Response response = ConnectAPI.excuteHttpMethod("", getAll + productId, "GET", true);
             Type typeOfT = new TypeToken<ArrayList<PriceHistory>>() {
+            }.getType();
+            founderList = gson.fromJson(response.getMessage(), typeOfT);
+        } catch (IOException ex) {
+            Logger.getLogger(PriceHistoryController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return founderList;
+    }
+    
+    public List<ImportDetail> getImportHistoryByProductId(String productId) {
+        List<ImportDetail> founderList = null;
+        try {
+            Response response = ConnectAPI.excuteHttpMethod("", getImportHistory + productId, "GET", true);
+            Type typeOfT = new TypeToken<ArrayList<ImportDetail>>() {
             }.getType();
             founderList = gson.fromJson(response.getMessage(), typeOfT);
         } catch (IOException ex) {

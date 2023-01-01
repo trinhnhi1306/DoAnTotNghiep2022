@@ -45,6 +45,9 @@ public class OrderDetailController {
 		for(OrderDetail o : orderDetails)
 			o.setOrder(order);
 		
+		if (orderDetailService.updateSoldQuantityByOrderDetail(orderDetails, 1) == false)
+			return AppUtils.returnJS(HttpStatus.BAD_REQUEST, "Order containing product have been sold out", null);
+		
 		orderDetailService.saveListOrderDetail(orderDetails);
 		return AppUtils.returnJS(HttpStatus.OK, "Save order details successfully!", null);
 	}

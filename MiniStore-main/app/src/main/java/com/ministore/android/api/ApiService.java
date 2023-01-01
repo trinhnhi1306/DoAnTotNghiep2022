@@ -47,7 +47,7 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    String BASE_URL = "http://192.168.1.23:8080/api/";
+    String BASE_URL = "http://172.20.10.7:80/api/";
 
     String POSTER_IMAGE_URL = BASE_URL + "posters/";
     String CATEGORY_IMAGE_URL = BASE_URL + "category/image/";

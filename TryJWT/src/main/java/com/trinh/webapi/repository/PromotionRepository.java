@@ -30,4 +30,8 @@ public interface PromotionRepository extends JpaRepository<Promotion, Integer>{
 	public List<Promotion> findByStartDateBeforeAndFinishDateAfterOrderByIdDesc(Date now1, Date now2);
 	
 	public List<Promotion> findByStartDateAfterAndFinishDateBeforeOrderByIdDesc(Date now1, Date now2);
+	
+	public List<Promotion> findByStartDateLessThanEqualAndFinishDateGreaterThanEqualOrderByIdDesc(Date now1, Date now2);
+	
+	public List<Promotion> findByStartDateGreaterThanEqualAndFinishDateLessThanEqualOrderByIdDesc(Date now1, Date now2);
 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ministore.android.app-mergeDebugResources-38:/values-pa/values-pa.xml",
+            "outputFile": "com.ministore.android.app-mergeDebugResources-39:/values-pa/values-pa.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\c6770eda00af6c105866b6db09ea3053\\transformed\\core-1.9.0\\res\\values-pa\\values-pa.xml",

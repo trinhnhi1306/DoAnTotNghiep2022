@@ -1,5 +1,8 @@
 package com.trinh.webapi.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,8 +14,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.trinh.webapi.Exception.NotFoundException;
+import com.trinh.webapi.dto.BrandDTO;
+import com.trinh.webapi.dto.CategoryDTO;
 import com.trinh.webapi.model.Brand;
+import com.trinh.webapi.model.Category;
 import com.trinh.webapi.repository.BrandRepository;
+import com.trinh.webapi.repository.ProductRepository;
 import com.trinh.webapi.service.BrandService;
 
 @Service
@@ -20,6 +27,9 @@ public class BrandServiceImpl implements BrandService{
 
 	@Autowired
 	BrandRepository brandRepository;
+	
+	@Autowired
+	ProductRepository productRepository;
 	
 	@Override
 	public List<Brand> findAll() {
@@ -66,5 +76,31 @@ public class BrandServiceImpl implements BrandService{
 	@Override
 	public void updateBrand(Brand brand) {
 		brandRepository.save(brand);
+	}
+
+	@Override
+	public List<BrandDTO> findMostPurchasedBrand() {
+		List<Brand> list = brandRepository.findAll();
+		List<BrandDTO> result = new ArrayList<>();
+		Integer soldQuantity = 0;
+		BrandDTO dto = null;
+		for(Brand b : list) {
+			soldQuantity = productRepository.sumSoldQuantityByBrand(b.getId());
+			if(soldQuantity != null && soldQuantity != 0) {
+				dto = new BrandDTO(b, soldQuantity);
+				result.add(dto);
+			}
+		}
+		
+		Collections.sort(result, new Comparator<BrandDTO>() {
+            @Override
+            public int compare(BrandDTO o1, BrandDTO o2) {
+                if (o2.getSoldQuantity() >= o1.getSoldQuantity())
+                	return 1;
+                else
+                	return -1;
+            }
+        });
+		return result;
 	}
 }

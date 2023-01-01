@@ -58,7 +58,7 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    String BASE_URL = "http://192.168.1.110:80/api/";
+    String BASE_URL = "http://172.20.10.7:80/api/";
 
     String POSTER_IMAGE_URL = BASE_URL + "posters/";
     String CATEGORY_IMAGE_URL = BASE_URL + "category/image/";
@@ -247,6 +247,8 @@ public interface ApiService {
     Call<ResponseObject> insertOrderByUserId(@Header("Authorization") String authorization, @Path("id") int userId, @Body Order order);
     @PUT("order/{id}")
     Call<ResponseObject> changeOrderStatus(@Header("Authorization") String authorization, @Path("id") int orderId, @Query("statusId") int statusId);
+    @PUT("order/{id}")
+    Call<ResponseObject> payOrder(@Header("Authorization") String authorization, @Path("id") int orderId, @Query("statusId") int statusId, @Query("payment") String payment);
     @GET("order")
     Call<List<Order>> getOrderByStatus(@Header("Authorization") String authorization, @Query("statusId") int statusId);
     @GET("order/order-summary")

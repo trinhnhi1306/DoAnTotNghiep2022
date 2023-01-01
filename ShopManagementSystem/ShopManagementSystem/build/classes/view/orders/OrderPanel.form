@@ -428,27 +428,21 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jRadioButton_ChoXacNhan" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton_YeuCauHuy" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jRadioButton_YeuCauTra" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jRadioButton_DaHuy" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jRadioButton_DaTra" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButton_DangGiao" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jRadioButton_DaGiao" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jRadioButton_DangGiao" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jRadioButton_DaGiao" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jRadioButton_DaHuy" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jRadioButton_DaNhan" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jRadioButton_DaTra" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButton_DaNhan" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -466,7 +460,6 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jRadioButton_YeuCauHuy" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jRadioButton_DaHuy" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jRadioButton_DaNhan" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -495,23 +488,6 @@
           </Properties>
           <Events>
             <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jRadioButton_DaHuyStateChanged"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton_YeuCauHuy">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroup1"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Request cancellation"/>
-          </Properties>
-          <Events>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jRadioButton_YeuCauHuyStateChanged"/>
           </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="jRadioButton_ChoXacNhan">

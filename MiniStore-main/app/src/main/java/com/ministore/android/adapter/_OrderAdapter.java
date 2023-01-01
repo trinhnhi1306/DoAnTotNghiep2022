@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,7 +14,9 @@ import androidx.annotation.Nullable;
 
 import com.ministore.android.R;
 import com.ministore.android.activity._OrderDetailActivity;
+import com.ministore.android.api.ApiService;
 import com.ministore.android.model.Order;
+import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -36,6 +39,8 @@ public class _OrderAdapter extends ArrayAdapter<Order>{
 
     @Override
     public int getCount() {
+        if(data == null)
+            return 0;
         return data.size();
     }
 
@@ -43,6 +48,7 @@ public class _OrderAdapter extends ArrayAdapter<Order>{
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(resource, null);
+        ImageView ivIcon = convertView.findViewById(R.id.ivIcon);
         TextView tvUsername = convertView.findViewById(R.id.tvUsername);
         TextView tvTotalPrice = convertView.findViewById(R.id.tvTotalPrice);
         TextView tvDate = convertView.findViewById(R.id.tvDate);
@@ -57,6 +63,7 @@ public class _OrderAdapter extends ArrayAdapter<Order>{
         tvTotalPrice.setText(NumberFormat.getNumberInstance(Locale.US).format(order.getTotalPrice()) + "đ");
         tvDate.setText(day);
         tvAddress.setText(order.getAddress());
+        Picasso.get().load(ApiService.USER_IMAGE_URL + order.getUser().getImage()).into(ivIcon);
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

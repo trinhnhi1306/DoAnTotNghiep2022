@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import model.Order;
 import model.Product;
 import model.Response;
+import netscape.javascript.JSObject;
 import output.ProductOutput;
 import utils.ConnectAPI;
 
@@ -26,13 +27,27 @@ import utils.ConnectAPI;
  */
 public class ProductController extends BaseController {
 
+    private String getLastImportPrice;
+    
     public ProductController() {
         getOneByID = "/api/product/";
         getAll = "/api/product/all";
         addOne = "/api/admin/product";
         editOrDelete = "/api/admin/product/";
-        getItemInOnePage = "/api/product?pageNo=%d&pageSize=20&sortField=id&sortDirection=desc";
+        getItemInOnePage = "/api/admin/product?pageNo=%d&pageSize=20&sortField=id&sortDirection=desc";
         getImage = "/api/product/image/";
+        getLastImportPrice = "/api/admin/product/lasted-import-price/";
+    }
+    
+    public Float getLastedImportPrice(String id) {
+        Response response = null;
+        try {
+            response = ConnectAPI.excuteHttpMethod("", getLastImportPrice + id, "GET", true);
+
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return Float.parseFloat(convertResponse(response.getMessage()).getMessage());
     }
 
     public Product getProductById(String id) {

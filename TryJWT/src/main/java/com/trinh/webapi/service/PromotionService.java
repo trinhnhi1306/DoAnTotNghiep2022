@@ -19,4 +19,5 @@ public interface PromotionService {
 	public Date convertStringToDate(String dateTime);
 	public int getCurrentPromotionByProduct(Product product);
 	public String checkPromotionByProduct(Product product, Date startDate, Date finishDate);
+	public List<Promotion> findPromotion(Date startDate, Date finishDate);
 }

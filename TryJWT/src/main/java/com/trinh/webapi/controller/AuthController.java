@@ -127,6 +127,8 @@ public class AuthController {
 				}
 			});
 		}
+		user.setFirstName(signUpRequest.getFirstName());
+		user.setLastName(signUpRequest.getLastName());
 		user.setRoles(roles);
 		user.setStatus(true);
 		if (user.getImage() == null || user.getImage().isEmpty()) {

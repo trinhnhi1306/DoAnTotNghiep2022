@@ -38,6 +38,7 @@ import com.trinh.webapi.service.BrandService;
 import com.trinh.webapi.service.ImportDetailService;
 import com.trinh.webapi.service.ImportService;
 import com.trinh.webapi.service.ProductService;
+import com.trinh.webapi.service.PromotionService;
 import com.trinh.webapi.service.UserService;
 
 
@@ -51,6 +52,9 @@ public class ManageImportController {
 	
 	@Autowired
 	ImportDetailService importDetailService;	
+	
+	@Autowired
+	PromotionService promotionService;
 	
 	@Autowired
 	ProductService productService;
@@ -72,6 +76,12 @@ public class ManageImportController {
 		if (imports == null)
 			return AppUtils.returnJS(HttpStatus.BAD_REQUEST, "Import is unavaiable", null);
 		return ResponseEntity.ok(imports);
+	}
+	
+	@GetMapping(value = { "/search/{startDate}/{finishDate}" })
+	public ResponseEntity<?> searchImport(@PathVariable("startDate") String startDate, @PathVariable("finishDate") String finishDate) {
+		return ResponseEntity.ok(importService.searchImport(promotionService.convertStringToDate(startDate),
+				promotionService.convertStringToDate(finishDate)));
 	}
 	
 	@GetMapping(value = "/import-detail")

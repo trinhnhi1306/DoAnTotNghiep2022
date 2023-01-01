@@ -35,6 +35,7 @@ import com.trinh.webapi.model.Order;
 import com.trinh.webapi.model.OrderDetail;
 import com.trinh.webapi.model.OrderStatus;
 import com.trinh.webapi.model.Product;
+import com.trinh.webapi.model.Return;
 import com.trinh.webapi.model.User;
 import com.trinh.webapi.payload.response.ResponseBody;
 import com.trinh.webapi.repository.OrderDetailRepository;
@@ -45,6 +46,7 @@ import com.trinh.webapi.service.OrderStatusService;
 import com.trinh.webapi.service.PriceHistoryService;
 import com.trinh.webapi.service.ProductService;
 import com.trinh.webapi.service.ReportService;
+import com.trinh.webapi.service.ReturnService;
 import com.trinh.webapi.service.UserService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -54,6 +56,9 @@ public class OrderController {
 
 	@Autowired
 	OrderService orderService;
+	
+	@Autowired
+	ReturnService returnService;
 
 	@Autowired
 	CartService cartService;
@@ -120,7 +125,8 @@ public class OrderController {
 	public ResponseEntity<?> changeOrderStatus(@PathVariable("id") Integer id,
 			@RequestParam("statusId") Integer statusId,
 			@RequestParam(value = "shipperId", required = false) Optional<Integer> shipperId,
-			@RequestParam(value = "approverId", required = false) Optional<Integer> approverId) {
+			@RequestParam(value = "approverId", required = false) Optional<Integer> approverId,
+			@RequestParam(value = "payment", required = false) Optional<String> payment) {
 		Order order = null;
 
 		
@@ -129,9 +135,14 @@ public class OrderController {
 		if (order == null)
 			return AppUtils.returnJS(HttpStatus.BAD_REQUEST, "Order is unavaiable", null);
 
-		if (statusId == 3)
-			if (orderDetailService.updateSoldQuantityByOrderDetail(order.getOrderDetails()) == false)
-				return AppUtils.returnJS(HttpStatus.BAD_REQUEST, "Order containing product have been sold out", null);
+//		if (statusId == 3)
+//			if (orderDetailService.updateSoldQuantityByOrderDetail(order.getOrderDetails(), 1) == false)
+//				return AppUtils.returnJS(HttpStatus.BAD_REQUEST, "Order containing product have been sold out", null);
+		
+		if (statusId == 5)
+//			if (order.getStatus().getId() == 3)
+				orderDetailService.updateSoldQuantityByOrderDetail(order.getOrderDetails(), 2);
+		
 		
 		if (shipperId.isPresent()) {
 			User shipper = userService.findById(shipperId.get());
@@ -140,6 +151,9 @@ public class OrderController {
 		if (approverId.isPresent()) {
 			User approver = userService.findById(approverId.get());
 			order.setApprover(approver);
+		}
+		if (payment.isPresent()) {
+			order.setPaymentType(payment.get());
 		}
 
 		orderService.updateOrder(order, statusId);
@@ -163,12 +177,18 @@ public class OrderController {
 		if (orderStatus == null) {
 			return AppUtils.returnJS(HttpStatus.BAD_REQUEST, "Status id not invalid!", null);
 		}
-		List<Order> orders = orderService.findByUserAndStatusOrderByDateDesc(user, orderStatus);
+		
+		List<Order> orders = null;
+		
 		if(statusId == 9) {
-			OrderStatus orderStatus1 = orderStatusService.findById(8);
-			List<Order> orders1 = orderService.findByUserAndStatusOrderByDateDesc(user, orderStatus1);
-			orders.addAll(orders1);
+			orders = new ArrayList<>();
+			List<Return> returns = returnService.getAllByUserId(id);
+			for(Return r : returns)				
+				orders.add(r.getOrder());
 		}
+		else		
+			orders = orderService.findByUserAndStatusOrderByDateDesc(user, orderStatus);
+		
 		return ResponseEntity.ok(orders);
 	}
 
@@ -242,8 +262,8 @@ public class OrderController {
 		}
 		order.setDate(new Date());
 		order.setUser(user);
-		if(order.getPaymentType() == null)
-			order.setPaymentType("off");
+//		if(order.getPaymentType() == null)
+//			order.setPaymentType("off");
 
 		order = orderService.updateOrder(order, 1);
 		return AppUtils.returnJS(HttpStatus.OK, "Save order successfully!", order);

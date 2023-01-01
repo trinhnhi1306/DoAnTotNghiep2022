@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import model.Category;
 import model.Response;
+import output.CategoryDTO;
 import output.CategoryOutput;
 import utils.ConnectAPI;
 
@@ -24,6 +25,7 @@ import utils.ConnectAPI;
  * @author TRINH
  */
 public class CategoryController extends BaseController {
+    private String getMostPurchased;
 
     public CategoryController() {
         getAll = "/api/category/all";
@@ -32,6 +34,7 @@ public class CategoryController extends BaseController {
         addOne = "/api/admin/category";
         editOrDelete = "/api/admin/category/";
         getImage = "/api/category/image/";
+        getMostPurchased = "/api/admin/category/most-purchased";
     }
 
     public Category getCategoryById(String id) {
@@ -99,6 +102,19 @@ public class CategoryController extends BaseController {
             System.out.println(ex.getMessage());
         }
         return response;
+    }
+    
+    public List<CategoryDTO> getMostPurchased(){
+        List<CategoryDTO> founderList = null;
+        try {
+            Response reponse = ConnectAPI.excuteHttpMethod("", getMostPurchased, "GET", true);
+            Type typeOfT = new TypeToken<ArrayList<CategoryDTO>>() {
+            }.getType();
+            founderList = gson.fromJson(reponse.getMessage(), typeOfT);
+        } catch (IOException ex) {
+            Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return founderList;
     }
 
     public Response deleteCategoryByID(String id) {

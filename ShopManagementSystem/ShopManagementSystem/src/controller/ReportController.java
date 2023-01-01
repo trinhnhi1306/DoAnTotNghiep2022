@@ -19,14 +19,19 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import model.Category;
 import model.Report;
 import model.Response;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+import output.BrandDTO;
+import output.CategoryDTO;
 import utils.ConnectAPI;
 
 /**
@@ -58,14 +63,14 @@ public class ReportController extends BaseController{
         return founderList;
     }
     
-    public void setDataToChart(JPanel panel, DefaultTableModel dtm, int type, String xTitle, String yTitle, String... range) {
+    public void setDataToBarChart(JPanel panel, DefaultTableModel dtm, String type, String xTitle, String yTitle, String... range) {
         String api = "";
         String title = "";
-        if(type == 1) {
+        if(type.equalsIgnoreCase("date")) {
             api = String.format(getByDate, range[0], range[1]);
             title = "Revenue statistics chart in " + range[0] + " - " + range[1];
         }
-        else if(type == 2){
+        else if(type.equalsIgnoreCase("month")){
             api = getByMonth + range[0];
             title = "Revenue statistics chart in " + range[0];
         }
@@ -84,13 +89,14 @@ public class ReportController extends BaseController{
             vt.add(b.getLabel());
             vt.add(b.getRevenue());
             vt.add(b.getFunds());
+            vt.add(b.getReturns());
             vt.add(b.getProfit());
             vt.add(b.getProfitRate());
             dtm.addRow(vt);
             
             dataset.addValue(b.getRevenue(), "Revenue", b.getLabel());
             dataset.addValue(b.getFunds(), "Funds", b.getLabel());
-//            dataset.addValue(b.getProfit(), "Profit", b.getLabel());
+            dataset.addValue(b.getReturns(), "Return", b.getLabel());
         }
         
         JFreeChart barChart = ChartFactory.createBarChart3D(title.toUpperCase(), xTitle, yTitle, dataset, PlotOrientation.VERTICAL, true, true, false);
@@ -100,6 +106,69 @@ public class ReportController extends BaseController{
         ChartPanel chartPanel = new ChartPanel(barChart);
         chartPanel.setMouseWheelEnabled(true);
         chartPanel.setPreferredSize(new Dimension(panel.getWidth() - 300, 550));
+        
+        panel.removeAll();
+        panel.setLayout(new CardLayout());
+        panel.add(chartPanel);
+        panel.validate();
+        panel.repaint();
+    }
+    
+    public void setCategoryToPieChart(JPanel panel, DefaultTableModel dtm, List<CategoryDTO> list) {
+
+        DefaultPieDataset dataset = new DefaultPieDataset();
+        
+        dtm.setNumRows(0);
+        Vector vt;
+        int i = 0;
+        for (CategoryDTO b : list) {
+            i++;
+            vt = new Vector();
+            vt.add(i);
+            vt.add(b.getCategory().getCategoryId());
+            vt.add(b.getCategory().getName());
+            vt.add(b.getCategory().getNote());
+            vt.add(b.getSoldQuantity());
+            dtm.addRow(vt);
+            
+            dataset.setValue(b.getCategory().getName(), b.getSoldQuantity());
+        }
+        String title = "Most purchased categories";
+        
+        createPieChart(panel, title, dataset);
+    }
+    
+    public void setBrandToPieChart(JPanel panel, DefaultTableModel dtm, List<BrandDTO> list) {
+
+        DefaultPieDataset dataset = new DefaultPieDataset();
+        
+        dtm.setNumRows(0);
+        Vector vt;
+        int i = 0;
+        for (BrandDTO b : list) {
+            i++;
+            vt = new Vector();
+            vt.add(i);
+            vt.add(b.getBrand().getBrandId());
+            vt.add(b.getBrand().getName());
+            vt.add(b.getBrand().getDescription());
+            vt.add(b.getSoldQuantity());
+            dtm.addRow(vt);
+            
+            dataset.setValue(b.getBrand().getName(), b.getSoldQuantity());
+        }
+        String title = "Most purchased brands";
+        
+        createPieChart(panel, title, dataset);
+    }
+    
+    public void createPieChart(JPanel panel, String title, DefaultPieDataset dataset){
+        JFreeChart pieChart = ChartFactory.createPieChart(title.toUpperCase(), dataset, false, true, false);
+        
+        PiePlot piePlot = (PiePlot) pieChart.getPlot();
+        piePlot.setBackgroundPaint(Color.WHITE);
+        
+        ChartPanel chartPanel = new ChartPanel(pieChart);
         
         panel.removeAll();
         panel.setLayout(new CardLayout());

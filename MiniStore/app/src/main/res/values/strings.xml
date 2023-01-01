@@ -103,6 +103,8 @@
     <string name="specific_address">Specific address</string>
     <string name="enter_house_num">Enter house number, street name ...</string>
 
+    <string name="momo">MoMo e-wallet</string>
+    <string name="cash">Cash</string>
     <string name="detail">Detail</string>
     <string name="description">Description</string>
     <string name="rate_and_comment">Rate and comment</string>

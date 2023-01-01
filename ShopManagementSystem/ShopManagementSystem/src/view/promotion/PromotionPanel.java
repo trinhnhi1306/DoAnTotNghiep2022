@@ -68,8 +68,8 @@ public class PromotionPanel extends javax.swing.JPanel {
         jPanel_BillDateInfo = new javax.swing.JPanel();
         jLabel_DayImportHistoryFrom = new javax.swing.JLabel();
         jLabel_DayImportHistoryTo = new javax.swing.JLabel();
-        jDateChooser_ImportHistoryFrom = new com.toedter.calendar.JDateChooser();
-        jDateChooser_ImportHistoryTo = new com.toedter.calendar.JDateChooser();
+        jDateChooser_StartDate = new com.toedter.calendar.JDateChooser();
+        jDateChooser_FinishDate = new com.toedter.calendar.JDateChooser();
         jButton_Apply = new javax.swing.JButton();
         jButton_Clear = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -145,13 +145,13 @@ public class PromotionPanel extends javax.swing.JPanel {
         jLabel_DayImportHistoryTo.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel_DayImportHistoryTo.setText("To");
 
-        jDateChooser_ImportHistoryFrom.setDate(new java.util.Date());
-        jDateChooser_ImportHistoryFrom.setDateFormatString("dd-MM-yyyy");
-        jDateChooser_ImportHistoryFrom.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jDateChooser_StartDate.setDate(new java.util.Date());
+        jDateChooser_StartDate.setDateFormatString("dd-MM-yyyy");
+        jDateChooser_StartDate.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
 
-        jDateChooser_ImportHistoryTo.setDate(new java.util.Date());
-        jDateChooser_ImportHistoryTo.setDateFormatString("dd-MM-yyyy");
-        jDateChooser_ImportHistoryTo.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jDateChooser_FinishDate.setDate(new java.util.Date());
+        jDateChooser_FinishDate.setDateFormatString("dd-MM-yyyy");
+        jDateChooser_FinishDate.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
 
         jButton_Apply.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jButton_Apply.setForeground(new java.awt.Color(51, 51, 51));
@@ -186,8 +186,8 @@ public class PromotionPanel extends javax.swing.JPanel {
                     .addComponent(jLabel_DayImportHistoryTo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_BillDateInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jDateChooser_ImportHistoryTo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jDateChooser_ImportHistoryFrom, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
+                    .addComponent(jDateChooser_FinishDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDateChooser_StartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
                 .addGap(80, 80, 80)
                 .addGroup(jPanel_BillDateInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton_Apply, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,11 +202,11 @@ public class PromotionPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(jPanel_BillDateInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel_DayImportHistoryFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateChooser_ImportHistoryFrom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jDateChooser_StartDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel_BillDateInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel_DayImportHistoryTo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser_ImportHistoryTo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jDateChooser_FinishDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel_BillDateInfoLayout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addComponent(jButton_Apply, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -442,7 +442,7 @@ public class PromotionPanel extends javax.swing.JPanel {
         jRadioButton_Ongoing.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton_Ongoing);
         jRadioButton_Ongoing.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jRadioButton_Ongoing.setText("Ongoing");
+        jRadioButton_Ongoing.setText("On-going");
         jRadioButton_Ongoing.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jRadioButton_OngoingStateChanged(evt);
@@ -531,21 +531,19 @@ public class PromotionPanel extends javax.swing.JPanel {
 
     private void jButton_ApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ApplyActionPerformed
         // TODO add your handling code here:
-        //        LocalDate startDate = jDateChooser_ImportHistoryFrom.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        //        LocalDate endDate = jDateChooser_ImportHistoryTo.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        //        Duration diff = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay());
-        //        long diffDays = diff.toDays();
-        //        if (diffDays < 0) {
-            //            JOptionPane.showMessageDialog(this, "The start date must be less than the end date!");
-            //        } else {
-            //            histories = importHistory.readImportHistoriesByDate(startDate, endDate);
-            //            addRowsToHistoryTable(ingredientList);
-            //        }
+        jRadioButton_All.setSelected(true);
+        List<Promotion> list = prc.searchPromotions(jDateChooser_StartDate.getDate(), jDateChooser_FinishDate.getDate());
+        prc.loadTable(list, dtmPromotion);
+        jTextField_ID.setText("");
+        jTextField_User.setText("");
+        jTextField_StartDate.setText("");
+        jTextField_FinishDate.setText("");
+        dtmPromotionDetail.setRowCount(0);
     }//GEN-LAST:event_jButton_ApplyActionPerformed
 
     private void jTable_PromotionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_PromotionMouseClicked
         // TODO add your handling code here:
-        int selectedRow = jTable_PromotionDetail.convertRowIndexToModel(jTable_Promotion.getSelectedRow());
+        int selectedRow = jTable_Promotion.convertRowIndexToModel(jTable_Promotion.getSelectedRow());
         String id = jTable_Promotion.getValueAt(selectedRow, 0).toString();
 
         jTextField_ID.setText(id);
@@ -559,6 +557,7 @@ public class PromotionPanel extends javax.swing.JPanel {
 
     private void jButton_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ClearActionPerformed
         // TODO add your handling code here:
+        loadData("all");
     }//GEN-LAST:event_jButton_ClearActionPerformed
 
     private void jButton_ModifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_ModifyMouseClicked
@@ -688,8 +687,8 @@ public class PromotionPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton_Clear;
     private javax.swing.JButton jButton_Modify;
     private javax.swing.JButton jButton_Remove;
-    private com.toedter.calendar.JDateChooser jDateChooser_ImportHistoryFrom;
-    private com.toedter.calendar.JDateChooser jDateChooser_ImportHistoryTo;
+    private com.toedter.calendar.JDateChooser jDateChooser_FinishDate;
+    private com.toedter.calendar.JDateChooser jDateChooser_StartDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -94,7 +94,7 @@ public class ReturnController {
 		Return return0 = null;
 		try {
 			return0 = returnService.findReturnByOrderId(orderId);
-		} catch (NotFoundException e) {
+		} catch (Exception e) {
 			return AppUtils.returnJS(HttpStatus.BAD_REQUEST, "Return is unavaiable", null);
 		}
 		return ResponseEntity.ok(return0);
@@ -122,10 +122,19 @@ public class ReturnController {
 		if(statusId == 1) {
 			returnService.updateReturn(return0, true);
 			orderService.updateOrder(order, 8);
+			List<OrderDetail> list = new ArrayList<>();
+			OrderDetail temp = null;
+			for(ReturnDetail r : return0.getReturnDetails()) {
+				temp = new OrderDetail();
+				temp.setProduct(r.getProduct());
+				temp.setQuantity(r.getQuantity());
+				list.add(temp);
+			}
+			orderDetailService.updateSoldQuantityByOrderDetail(list, 2);
 		}
 		else {
 			returnService.updateReturn(return0, false);
-			orderService.updateOrder(order, 4);
+			orderService.updateOrder(order, 7);
 		}
 
 		return AppUtils.returnJS(HttpStatus.OK, "Update return successfully!", return0);

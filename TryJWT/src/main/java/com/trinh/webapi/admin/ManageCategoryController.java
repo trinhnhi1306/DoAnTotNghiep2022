@@ -1,5 +1,7 @@
 package com.trinh.webapi.admin;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.trinh.webapi.Exception.AppUtils;
+import com.trinh.webapi.dto.CategoryDTO;
 import com.trinh.webapi.model.Category;
 import com.trinh.webapi.service.CategoryService;
 
@@ -27,6 +31,12 @@ public class ManageCategoryController {
 	
 	@Autowired
 	CategoryService categoryService;
+	
+	@GetMapping(value = "/most-purchased")
+	public ResponseEntity<List<CategoryDTO>> getMostPurchasedCategory() {
+		List<CategoryDTO> list = categoryService.findMostPurchasedCategory();
+		return ResponseEntity.ok(list);
+	}
 	
 	@PostMapping
 	public ResponseEntity<?> postCategory(@Valid @RequestBody Category category, BindingResult bindingResult) {

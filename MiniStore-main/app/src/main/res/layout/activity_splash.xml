@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/img_background"
+        android:src="@drawable/img_back_blue_1_vertical"
         android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -22,7 +23,7 @@
             android:layout_height="75dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="120dp"
-            android:src="@drawable/foody_logo" />
+            android:src="@drawable/ic_shopping_bag" />
 
         <TextView
             android:id="@+id/tv_app_name"
@@ -44,7 +45,7 @@
             android:layout_marginTop="30dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/foodies"
+            app:lottie_rawRes="@raw/pencil_drawing"
             app:lottie_speed="2" />
 
         <TextView

@@ -208,6 +208,6 @@ public class UserServiceImpl implements UserService {
 		else
 			eRole = roleRepository.findByName(ERole.ROLE_STAFF);
 		
-		return userRepository.findByRolesIn(Arrays.asList(eRole.get()));
+		return userRepository.findByRolesInAndStatus(Arrays.asList(eRole.get()), true);
 	}
 }

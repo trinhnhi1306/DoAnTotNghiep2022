@@ -125,20 +125,39 @@ public class PromotionServiceImpl implements PromotionService {
 	@Override
 	public String checkPromotionByProduct(Product product, Date startDate, Date finishDate) {
 		
+//		//Case 1: date1 <= startDate <= date2
+//		List<Promotion> promotion1 = promotionRepository.findByStartDateBeforeAndFinishDateAfterOrderByIdDesc(startDate, startDate);
+//		
+//		//Case 1: date1 <= finishDate <= date2
+//		List<Promotion> promotion2 = promotionRepository.findByStartDateBeforeAndFinishDateAfterOrderByIdDesc(finishDate, finishDate);
+//		
+//		//Case 1: date1 <= startDate < finishDate <= date2
+//		List<Promotion> promotion3 = promotionRepository.findByStartDateBeforeAndFinishDateAfterOrderByIdDesc(startDate, finishDate);
+//		
+//		//Case 1: startDate <= date1 < date2 <= finishDate
+//		List<Promotion> promotion4 = promotionRepository.findByStartDateAfterAndFinishDateBeforeOrderByIdDesc(startDate, finishDate);
+//		
+//		promotion1.addAll(promotion2);
+//		promotion1.addAll(promotion3);
+//		promotion1.addAll(promotion4);
+		
 		//Case 1: date1 <= startDate <= date2
-		List<Promotion> promotion1 = promotionRepository.findByStartDateBeforeAndFinishDateAfterOrderByIdDesc(startDate, startDate);
+		List<Promotion> promotion1 = promotionRepository.findByStartDateLessThanEqualAndFinishDateGreaterThanEqualOrderByIdDesc(startDate, startDate);
 		
-		//Case 1: date1 <= finishDate <= date2
-		List<Promotion> promotion2 = promotionRepository.findByStartDateBeforeAndFinishDateAfterOrderByIdDesc(finishDate, finishDate);
+		//Case 2: date1 <= finishDate <= date2
+		List<Promotion> promotion2 = promotionRepository.findByStartDateLessThanEqualAndFinishDateGreaterThanEqualOrderByIdDesc(finishDate, finishDate);
 		
-		//Case 1: date1 <= startDate < finishDate <= date2
-		List<Promotion> promotion3 = promotionRepository.findByStartDateBeforeAndFinishDateAfterOrderByIdDesc(startDate, finishDate);
+		//Case 3: date1 <= startDate < finishDate <= date2
+		List<Promotion> promotion3 = promotionRepository.findByStartDateLessThanEqualAndFinishDateGreaterThanEqualOrderByIdDesc(startDate, finishDate);
 		
-		//Case 1: startDate <= date1 < date2 <= finishDate
-		List<Promotion> promotion4 = promotionRepository.findByStartDateAfterAndFinishDateBeforeOrderByIdDesc(startDate, finishDate);
+		//Case 4: startDate <= date1 < date2 <= finishDate
+		List<Promotion> promotion4 = promotionRepository.findByStartDateGreaterThanEqualAndFinishDateLessThanEqualOrderByIdDesc(startDate, finishDate);
 		
+		promotion1.removeAll(promotion2);
 		promotion1.addAll(promotion2);
+		promotion1.removeAll(promotion3);
 		promotion1.addAll(promotion3);
+		promotion1.removeAll(promotion4);
 		promotion1.addAll(promotion4);
 		
 		for(Promotion p : promotion1) {
@@ -148,6 +167,29 @@ public class PromotionServiceImpl implements PromotionService {
 			
 		}
 		return "false";
+	}
+
+	@Override
+	public List<Promotion> findPromotion(Date startDate, Date finishDate) {
+		//Case 1: date1 <= startDate <= date2
+		List<Promotion> promotion1 = promotionRepository.findByStartDateLessThanEqualAndFinishDateGreaterThanEqualOrderByIdDesc(startDate, startDate);
+		
+		//Case 2: date1 <= finishDate <= date2
+		List<Promotion> promotion2 = promotionRepository.findByStartDateLessThanEqualAndFinishDateGreaterThanEqualOrderByIdDesc(finishDate, finishDate);
+		
+		//Case 3: date1 <= startDate < finishDate <= date2
+		List<Promotion> promotion3 = promotionRepository.findByStartDateLessThanEqualAndFinishDateGreaterThanEqualOrderByIdDesc(startDate, finishDate);
+		
+		//Case 4: startDate <= date1 < date2 <= finishDate
+		List<Promotion> promotion4 = promotionRepository.findByStartDateGreaterThanEqualAndFinishDateLessThanEqualOrderByIdDesc(startDate, finishDate);
+		
+		promotion1.removeAll(promotion2);
+		promotion1.addAll(promotion2);
+		promotion1.removeAll(promotion3);
+		promotion1.addAll(promotion3);
+		promotion1.removeAll(promotion4);
+		promotion1.addAll(promotion4);
+		return promotion1;
 	}
 
 }

@@ -18,6 +18,7 @@ import com.trinh.webapi.model.OrderStatus;
 import com.trinh.webapi.repository.ImportRepository;
 import com.trinh.webapi.repository.OrderRepository;
 import com.trinh.webapi.repository.OrderStatusRepository;
+import com.trinh.webapi.repository.ReturnRepository;
 import com.trinh.webapi.service.ReportService;
 
 @Service
@@ -28,6 +29,9 @@ public class ReportServiceImpl implements ReportService{
 	
 	@Autowired
 	ImportRepository importRepository;
+	
+	@Autowired
+	ReturnRepository returnRepository;
 	
 	@Autowired
 	OrderStatusRepository statusRepository;
@@ -86,15 +90,17 @@ public class ReportServiceImpl implements ReportService{
 		List<Report> list = new ArrayList<>();
 		long revenue = 0;
 		long funds = 0;
+		long returns = 0;
 		long profit = 0;
 		long profitRate = 15;
 		Report report = null;
 		for(Integer i = 1; i <= 12; i++) {
 			revenue = (orderRepository.sumOrderByYearAndMonth(year, i) == null) ? 0 : orderRepository.sumOrderByYearAndMonth(year, i);
 			funds = (importRepository.sumImportByYearAndMonth(year, i) == null) ? 0 : importRepository.sumImportByYearAndMonth(year, i);
-			profit = revenue - funds;
+			returns = (returnRepository.sumReturnsByYearAndMonth(year, i) == null) ? 0 : returnRepository.sumReturnsByYearAndMonth(year, i);
+			profit = revenue - funds - returns;
 			profitRate = (long) ((profit <=0 ) ? 0 : (100.0 * profit / revenue));
-			report = new Report(i.toString(), revenue, funds, profit, profitRate);
+			report = new Report(i.toString(), revenue, funds, returns, profit, profitRate);
 			list.add(report);
 		}
 		
@@ -106,15 +112,17 @@ public class ReportServiceImpl implements ReportService{
 		List<Report> list = new ArrayList<>();
 		long revenue = 0;
 		long funds = 0;
+		long returns = 0;
 		long profit = 0;
 		long profitRate = 15;
 		Report report = null;
 		for(Integer i = year1; i <= year2; i++) {
 			revenue = (orderRepository.sumOrderByYear(i) == null) ? 0 : orderRepository.sumOrderByYear(i);
 			funds = (importRepository.sumImportByYear(i) == null) ? 0 : importRepository.sumImportByYear(i);
-			profit = revenue - funds;
+			returns = (returnRepository.sumReturnsByYear(i) == null) ? 0 : returnRepository.sumReturnsByYear(i);
+			profit = revenue - funds - returns;
 			profitRate = (long) ((profit <=0 ) ? 0 : (100.0 * profit / revenue));
-			report = new Report(i.toString(), revenue, funds, profit, profitRate);
+			report = new Report(i.toString(), revenue, funds, returns, profit, profitRate);
 			list.add(report);
 		}
 		
@@ -127,6 +135,7 @@ public class ReportServiceImpl implements ReportService{
 		List<Report> list = new ArrayList<>();
 		long revenue = 0;
 		long funds = 0;
+		long returns = 0;
 		long profit = 0;
 		long profitRate = 15;
 		Report report = null;
@@ -143,9 +152,10 @@ public class ReportServiceImpl implements ReportService{
 		while(date01.compareTo(date02) <= 0) {
 			revenue = (orderRepository.sumOrderByDate(date01) == null) ? 0 : orderRepository.sumOrderByDate(date01);
 			funds = (importRepository.sumImportByDate(date01) == null) ? 0 : importRepository.sumImportByDate(date01);
-			profit = revenue - funds;
+			returns = (returnRepository.sumReturnsByDate(date01) == null) ? 0 : returnRepository.sumReturnsByDate(date01);
+			profit = revenue - funds - returns;
 			profitRate = (long) ((profit <=0 ) ? 0 : (100.0 * profit / revenue));
-			report = new Report(formatter.format(date01), revenue, funds, profit, profitRate);
+			report = new Report(formatter.format(date01), revenue, funds, returns, profit, profitRate);
 			list.add(report);
 			date01 = addDays(date01, 1);
 		}

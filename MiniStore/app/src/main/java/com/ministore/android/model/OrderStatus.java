@@ -15,11 +15,12 @@ public class OrderStatus implements Serializable {
     static {
         orderStatusList = new ArrayList<>();
         orderStatusList.add(new OrderStatus(R.drawable.ic_playlist_add, new Status(1, "Processing")));
-        orderStatusList.add(new OrderStatus(R.drawable.ic_playlist_remove, new Status(2, "Requesting cancellation")));
+//        orderStatusList.add(new OrderStatus(R.drawable.ic_playlist_remove, new Status(2, "Requesting cancellation")));
         orderStatusList.add(new OrderStatus(R.drawable.ic_delivery_dining, new Status(3, "Delivering")));
-        orderStatusList.add(new OrderStatus(R.drawable.ic_check_box, new Status(4, "Delivered")));
+        orderStatusList.add(new OrderStatus(R.drawable.ic_notifications, new Status(4, "Delivered")));
         orderStatusList.add(new OrderStatus(R.drawable.ic_cancel, new Status(5, "Cancelled")));
-        orderStatusList.add(new OrderStatus(R.drawable.ic_playlist, new Status(9, "Returned")));
+        orderStatusList.add(new OrderStatus(R.drawable.ic_check_box, new Status(7, "Received")));
+        orderStatusList.add(new OrderStatus(R.drawable.ic_playlist_remove, new Status(9, "Returned")));
     }
 
     public static List<OrderStatus> getOrderStatusList() {

@@ -65,6 +65,7 @@
     <string name="calculation_unit">Calculation unit</string>
     <string name="cancel">Cancel</string>
     <string name="cart">Cart</string>
+    <string name="cash">Cash</string>
     <string name="check_out">Check out</string>
     <string name="choose_product">Choose product</string>
     <string name="clear">Clear</string>
@@ -96,6 +97,7 @@
     <string name="may_need">You may also need</string>
     <string name="menu_settings">Settings</string>
     <string name="method">Please choose method</string>
+    <string name="momo">MoMo e-wallet</string>
     <string name="most_purchased">Most Purchased</string>
     <string name="name">Name</string>
     <string name="nav_account">Account</string>

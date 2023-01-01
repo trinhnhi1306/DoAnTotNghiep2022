@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ministore.android.MyApplication;
 import com.ministore.android.R;
 import com.ministore.android.api.ApiService;
+import com.ministore.android.fragment.OrderFragment;
 import com.ministore.android.model.OrderDetail;
 import com.squareup.picasso.Picasso;
 
@@ -53,8 +54,8 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
         holder.tvPrice.setText(String.format("%s đ", MyApplication.formatNumber(orderDetail.getPrice())));
         holder.tvQuantity.setText(String.format("x%s", orderDetail.getQuantity()));
         holder.tvTotal.setText(String.format("%s đ", MyApplication.formatNumber(orderDetail.getPrice() * orderDetail.getQuantity())));
-        // Đã giao => Cho đánh giá và nhận xét
-        if (orderDetail.getOrder().getStatus().getId() == 4) {
+        // Đã nhận => Cho đánh giá và nhận xét
+        if (OrderFragment.STATUS_ID != 9 && orderDetail.getOrder().getStatus().getId() == 7) {
             holder.btnRate.setVisibility(View.VISIBLE);
             holder.btnRate.setOnClickListener(view -> {
                 if (onItemClickListener != null) {

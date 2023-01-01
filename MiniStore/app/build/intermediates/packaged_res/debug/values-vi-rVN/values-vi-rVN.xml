@@ -20,6 +20,7 @@
     <string name="calculation_unit">Đơn vị tính</string>
     <string name="cancel">Hủy bỏ</string>
     <string name="cart">Giỏ hàng</string>
+    <string name="cash">Thanh toán khi nhận hàng</string>
     <string name="check_out">Thanh toán</string>
     <string name="choose_product">Chọn sản phẩm</string>
     <string name="clear">Xóa hết</string>
@@ -51,6 +52,7 @@
     <string name="may_need">Bạn cũng có thể cần</string>
     <string name="menu_settings">Cài đặt</string>
     <string name="method">Vui lòng chọn phương thức</string>
+    <string name="momo">Ví MoMo</string>
     <string name="most_purchased">Được mua nhiều nhất</string>
     <string name="name">Tên</string>
     <string name="nav_account">Tài khoản</string>

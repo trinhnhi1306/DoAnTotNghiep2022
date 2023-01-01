@@ -61,8 +61,8 @@ public class DetailActivity extends AppCompatActivity implements MyApplication.O
     private ImageView imgImage;
     private TextView tvName, tvSoldQuantity, tvPriceBefore, tvPriceAfter, tvDiscount;
     private TextView tvDescription;
-    private TextView tvNumComment;
-    private RatingBar rtbRate;
+    private TextView tvNumComment, tvRateSummary, tvNumrateSummary;
+    private RatingBar rtbRate, rtbRateSummary;
     private RecyclerView rcvDetails, rcvComments, rcvProducts;
     private EditText edtQuantity;
     private ImageButton btnMinus, btnPlus;
@@ -236,7 +236,10 @@ public class DetailActivity extends AppCompatActivity implements MyApplication.O
         tvDiscount = findViewById(R.id.tv_discount);
         tvDescription = findViewById(R.id.tv_description);
         tvNumComment = findViewById(R.id.tv_num_comment);
+        tvRateSummary = findViewById(R.id.tv_rate_summary);
+        tvNumrateSummary = findViewById(R.id.tv_numrate_summary);
         rtbRate = findViewById(R.id.rtb_rate);
+        rtbRateSummary = findViewById(R.id.rtb_rate_summary);
         nestedScrollView = findViewById(R.id.nested_scroll_view);
         progressBar = findViewById(R.id.progress_bar);
         edtQuantity = findViewById(R.id.edt_quantity);
@@ -319,10 +322,26 @@ public class DetailActivity extends AppCompatActivity implements MyApplication.O
             @Override
             public void onResponse(Call<List<Feedback>> call, Response<List<Feedback>> response) {
                 List<Feedback> feedbackList = response.body();
-                if (feedbackList == null || feedbackList.isEmpty()) return;
+                if (feedbackList == null || feedbackList.isEmpty()) {
+                    rtbRate.setRating(0);
+                    rtbRateSummary.setRating(0);
+                    tvRateSummary.setText(String.valueOf(0.0));
+                    tvNumrateSummary.setText("(0 rate)");
+                    return;
+                }
                 tvNumComment.setText(String.format("%d comments", feedbackList.size()));
                 FeedbackAdapter feedbackAdapter = new FeedbackAdapter(feedbackList);
                 rcvComments.setAdapter(feedbackAdapter);
+                int sum = 0;
+                for(Feedback f : feedbackList){
+                    sum += f.getVote();
+                }
+
+                float rate = (float)sum/feedbackList.size();
+                rtbRate.setRating(rate);
+                rtbRateSummary.setRating(rate);
+                tvRateSummary.setText(String.valueOf(rate));
+                tvNumrateSummary.setText("(" + feedbackList.size() + " rate)");
             }
 
             @Override
@@ -354,7 +373,8 @@ public class DetailActivity extends AppCompatActivity implements MyApplication.O
                                 index = i;
                             }
                         }
-                        productList.remove(index);
+                        if(index != -1)
+                            productList.remove(index);
                         productAdatper.addData(productList);
                         isLoadingData = false;
                         progressBar.setVisibility(View.INVISIBLE);

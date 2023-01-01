@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,13 +14,19 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ministore.android.R;
+import com.ministore.android.activity.DetailActivity;
 import com.ministore.android.api.ApiService;
+import com.ministore.android.model.Feedback;
 import com.ministore.android.model.Product;
 import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProductAdatper extends RecyclerView.Adapter<ProductAdatper.ProductViewHolder>{
 
@@ -92,6 +99,29 @@ public class ProductAdatper extends RecyclerView.Adapter<ProductAdatper.ProductV
                 }
             }
         });
+
+        ApiService.apiService.getFeedbacksByProductId(product.getProductId()).enqueue(new Callback<List<Feedback>>() {
+            @Override
+            public void onResponse(Call<List<Feedback>> call, Response<List<Feedback>> response) {
+                List<Feedback> feedbackList = response.body();
+                if (feedbackList == null || feedbackList.isEmpty()) {
+                    holder.rtbRate.setRating(0);
+                    return;
+                }
+                int sum = 0;
+                for(Feedback f : feedbackList){
+                    sum += f.getVote();
+                }
+
+                float rate = (float)sum/feedbackList.size();
+                holder.rtbRate.setRating(rate);
+            }
+
+            @Override
+            public void onFailure(Call<List<Feedback>> call, Throwable t) {
+                Toast.makeText(null, t.getMessage() + "!!!!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public int getPosition(int productId) {
@@ -119,6 +149,7 @@ public class ProductAdatper extends RecyclerView.Adapter<ProductAdatper.ProductV
         private TextView tvName;
         private TextView tvSoldQuantity, tvDiscount, tvPrice;
         private AppCompatImageButton btnAddToCart;
+        private RatingBar rtbRate;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -130,6 +161,7 @@ public class ProductAdatper extends RecyclerView.Adapter<ProductAdatper.ProductV
             tvDiscount = itemView.findViewById(R.id.tv_discount);
             tvPrice = itemView.findViewById(R.id.tv_price);
             btnAddToCart = itemView.findViewById(R.id.btn_add_to_cart);
+            rtbRate = itemView.findViewById(R.id.rtb_rate);
         }
     }
 }

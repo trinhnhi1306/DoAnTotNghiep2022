@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ministore.android.app-mergeDebugResources-38:/values-port/values-port.xml",
+            "outputFile": "com.ministore.android.app-mergeDebugResources-39:/values-port/values-port.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\12e304ba8ae36e0fdd77aa96aebe446f\\transformed\\appcompat-1.7.0-alpha01\\res\\values-port\\values-port.xml",

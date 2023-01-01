@@ -119,7 +119,7 @@ public class LoginTabFragment extends Fragment {
         txtForgetPassword = view.findViewById(R.id.txt_login_forget);
         btnLogin = view.findViewById(R.id.btn_login);
         txtForgotPass = view.findViewById(R.id.txt_login_forget);
-        edtUsername.setText("quan");
+        edtUsername.setText("shipper");
         edtPassword.setText("123456");
     }
 

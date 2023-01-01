@@ -29,6 +29,7 @@ import utils.ConnectAPI;
 public class PromotionController extends BaseController{
     
     private String getPromotionDetail;
+    private String searchPromotion;
 
     public PromotionController() {
         getOneByID = "/api/admin/promotion/";
@@ -36,6 +37,7 @@ public class PromotionController extends BaseController{
         getPromotionDetail = "/api/admin/promotion/promotion-detail?promotionId=";
         addOne = "/api/admin/promotion/%d/%s/%s";
         editOrDelete = "/api/admin/promotion/";
+        searchPromotion = "/api/admin/promotion/search/%s/%s";
     }
     
     public Promotion getPromotionByID(String id) {
@@ -53,6 +55,23 @@ public class PromotionController extends BaseController{
         List<Promotion> founderList = null;
         try {
             Response response = ConnectAPI.excuteHttpMethod("", getAll + status, "GET", true);
+            Type typeOfT = new TypeToken<ArrayList<Promotion>>() {
+            }.getType();
+            founderList = gson.fromJson(response.getMessage(), typeOfT);
+        } catch (IOException ex) {
+            Logger.getLogger(PromotionController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return founderList;
+    }
+    
+    public List<Promotion> searchPromotions(Date startDate, Date finishDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String startDateStr = sdf.format(startDate) + "T00:00:00";
+        String finishDateStr = sdf.format(finishDate) + "T23:59:59";
+        String str = String.format(searchPromotion, startDateStr, finishDateStr);
+        List<Promotion> founderList = null;
+        try {
+            Response response = ConnectAPI.excuteHttpMethod("", str, "GET", true);
             Type typeOfT = new TypeToken<ArrayList<Promotion>>() {
             }.getType();
             founderList = gson.fromJson(response.getMessage(), typeOfT);

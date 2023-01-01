@@ -13,8 +13,10 @@ import org.springframework.stereotype.Service;
 import com.trinh.webapi.Exception.NotFoundException;
 import com.trinh.webapi.dto.FullProduct;
 import com.trinh.webapi.model.Category;
+import com.trinh.webapi.model.ImportDetail;
 import com.trinh.webapi.model.Product;
 import com.trinh.webapi.repository.CategoryRepository;
+import com.trinh.webapi.repository.ImportDetailRepository;
 import com.trinh.webapi.repository.ProductRepository;
 import com.trinh.webapi.service.ProductService;
 
@@ -26,6 +28,9 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Autowired
 	CategoryRepository categoryRepository;
+	
+	@Autowired
+	ImportDetailRepository importDetailRepository;
 
 	@Override
 	public Page<Product> getAll(int pageNo, int pageSize, String sortField, String sortDirection) {
@@ -96,7 +101,7 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<Product> getAllProduct() {
 		// TODO Auto-generated method stub
-		return productRepository.findAllByStatus(true);
+		return productRepository.findAllByStatusOrderByIdDesc(true);
 	}
 
 	@Override
@@ -129,5 +134,11 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> search(String keyword) {
 		// TODO Auto-generated method stub
 		return productRepository.search(keyword);
+	}
+
+	@Override
+	public List<ImportDetail> getImportPrice(Integer id) {
+		Product product = productRepository.getById(id);
+		return importDetailRepository.findByProductOrderByIdDesc(product);		
 	}
 }

@@ -26,12 +26,12 @@ public interface OrderRepository extends JpaRepository<Order, Integer>{
 	public List<Order> findByShipperAndStatusOrderByDateDesc(User user, OrderStatus orderStatus);
 	public List<Order> findByUserOrderByDateDesc(User user);
 
-	@Query("select sum(o.totalPrice) from Order o where YEAR(o.date) = :year")
+	@Query("select sum(o.totalPrice) from Order o where YEAR(o.date) = :year and ((o.status.id in (4, 7, 8, 9) and o.paymentType = 'off') or (o.status.id != 5 and o.paymentType like '%MOMO%'))")
 	public Long sumOrderByYear(Integer year);
 	
-	@Query("select sum(o.totalPrice) from Order o where YEAR(o.date) = :year and MONTH(o.date) = :month")
+	@Query("select sum(o.totalPrice) from Order o where YEAR(o.date) = :year and MONTH(o.date) = :month and ((o.status.id in (4, 7, 8, 9) and o.paymentType = 'off') or (o.status.id != 5 and o.paymentType like '%MOMO%'))")
 	public Long sumOrderByYearAndMonth(Integer year, Integer month);
 	
-	@Query("select sum(o.totalPrice) from Order o where DATE(o.date) = :date")
+	@Query("select sum(o.totalPrice) from Order o where DATE(o.date) = :date and ((o.status.id in (4, 7, 8, 9) and o.paymentType = 'off') or (o.status.id != 5 and o.paymentType like '%MOMO%'))")
 	public Long sumOrderByDate(@Param("date") Date date);
 }

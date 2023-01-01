@@ -297,9 +297,9 @@ public class MyApplication extends Application {
             case 1:
                 new AlertDialog.Builder(context)
                         .setTitle("Confirm")
-                        .setMessage("Are you sure want to request cancellation for this order?")
+                        .setMessage("Are you sure want to cancel this order?")
                         .setPositiveButton("OK", (dialogInterface, i) -> {
-                            ApiService.apiService.changeOrderStatus(auth, order.getOrderId(), 2)
+                            ApiService.apiService.changeOrderStatus(auth, order.getOrderId(), 5)
                                     .enqueue(new Callback<ResponseObject>() {
                                         @Override
                                         public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
@@ -376,11 +376,14 @@ public class MyApplication extends Application {
                 break;
             // Đang giao
             case 3:
+                break;
+            // Đã giao
+            case 4:
                 new AlertDialog.Builder(context)
                         .setTitle("Confirm")
                         .setMessage("Did you receive your order?")
                         .setPositiveButton("OK", (dialogInterface, i) -> {
-                            ApiService.apiService.changeOrderStatus(auth, order.getOrderId(), 4)
+                            ApiService.apiService.changeOrderStatus(auth, order.getOrderId(), 7)
                                     .enqueue(new Callback<ResponseObject>() {
                                         @Override
                                         public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
@@ -418,8 +421,8 @@ public class MyApplication extends Application {
                         .setNegativeButton("Cancel", null)
                         .show();
                 break;
-            // Đã giao + Đã hủy
-            case 4:
+            // Đã nhận + Đã hủy
+            case 7:
             case 5:
                 ApiService.apiService.repurchaseByOrderId(auth, order.getOrderId())
                         .enqueue(new Callback<ResponseObject>() {
@@ -469,11 +472,13 @@ public class MyApplication extends Application {
     }
 
     private enum EActionButton {
-        REQUEST_CANCELLATION("Request cancellation", R.color.dark_red, R.drawable.ic_playlist_remove_white),
+        REQUEST_CANCELLATION("Cancel order", R.color.dark_red, R.drawable.ic_playlist_remove_white),
         CANCEL_REQUEST("Cancel request", R.color.dark_gray, R.drawable.ic_cancel_white),
         RECEIVED("Received", R.color.light_blue, R.drawable.ic_check_box_white),
+        RECEIVED2("Received", R.color.light_blue, R.drawable.ic_check_box_white),
         REPURCHASE("Repurchase", R.color.light_green, R.drawable.ic_shopping_bag),
-        REPURCHASE2("Repurchase", R.color.light_green, R.drawable.ic_shopping_bag);
+        REPURCHASE2("Repurchase", R.color.light_green, R.drawable.ic_shopping_bag),
+        REPURCHASE3("Repurchase", R.color.light_green, R.drawable.ic_shopping_bag);
 
         private final String text;
         private final int colorResourceId;

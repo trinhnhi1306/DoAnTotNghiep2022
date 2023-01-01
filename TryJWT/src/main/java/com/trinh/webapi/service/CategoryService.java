@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 
+import com.trinh.webapi.dto.CategoryDTO;
 import com.trinh.webapi.model.Category;
 
 public interface CategoryService {
@@ -16,4 +17,6 @@ public interface CategoryService {
 	public Category addCategory(Category category);
 	public void deleteCategory(Category category);
 	public Category updateCategory(Category category);
+
+	public List<CategoryDTO> findMostPurchasedCategory();
 }

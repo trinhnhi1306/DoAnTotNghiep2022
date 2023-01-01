@@ -105,7 +105,6 @@ public class OrderPanel extends javax.swing.JPanel {
         jTable_Order = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jRadioButton_DaHuy = new javax.swing.JRadioButton();
-        jRadioButton_YeuCauHuy = new javax.swing.JRadioButton();
         jRadioButton_ChoXacNhan = new javax.swing.JRadioButton();
         jRadioButton_DangGiao = new javax.swing.JRadioButton();
         jRadioButton_DaGiao = new javax.swing.JRadioButton();
@@ -303,16 +302,6 @@ public class OrderPanel extends javax.swing.JPanel {
             }
         });
 
-        jRadioButton_YeuCauHuy.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton_YeuCauHuy);
-        jRadioButton_YeuCauHuy.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jRadioButton_YeuCauHuy.setText("Request cancellation");
-        jRadioButton_YeuCauHuy.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jRadioButton_YeuCauHuyStateChanged(evt);
-            }
-        });
-
         jRadioButton_ChoXacNhan.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton_ChoXacNhan);
         jRadioButton_ChoXacNhan.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -382,23 +371,19 @@ public class OrderPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton_ChoXacNhan)
-                    .addComponent(jRadioButton_YeuCauHuy)
-                    .addComponent(jRadioButton_YeuCauTra))
-                .addGap(18, 18, 18)
+                    .addComponent(jRadioButton_YeuCauTra)
+                    .addComponent(jRadioButton_DaHuy))
+                .addGap(46, 46, 46)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jRadioButton_DaTra)
+                        .addComponent(jRadioButton_DangGiao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButton_DaGiao)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton_DangGiao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jRadioButton_DaGiao))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton_DaHuy)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jRadioButton_DaNhan)))
+                            .addComponent(jRadioButton_DaTra)
+                            .addComponent(jRadioButton_DaNhan))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -410,7 +395,6 @@ public class OrderPanel extends javax.swing.JPanel {
                     .addComponent(jRadioButton_DaGiao))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton_YeuCauHuy)
                     .addComponent(jRadioButton_DaHuy)
                     .addComponent(jRadioButton_DaNhan))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
@@ -569,21 +553,13 @@ public class OrderPanel extends javax.swing.JPanel {
         if (jRadioButton_ChoXacNhan.isSelected()) {
             shipperDialog = new ShipperDialog(null, true);
             shipperDialog.setVisible(true);
+            if(shipperId == null)
+                return;
             Response res = oc.updateOrderByID(orderId, DANG_GIAO, Integer.parseInt(shipperId), LoginFrame.userID);
             JOptionPane.showMessageDialog(null, oc.convertResponse(res.getMessage()).getMessage());
             if (res.getResponseCode() == 200) {
                 loadData(CHO_XU_LY);
                 shipperId = null;
-            } else {
-                return;
-            }
-        }
-
-        if (jRadioButton_YeuCauHuy.isSelected()) {
-            Response res = oc.updateOrderByID(orderId, DA_HUY, 0, 0);
-            JOptionPane.showMessageDialog(null, oc.convertResponse(res.getMessage()).getMessage());
-            if (res.getResponseCode() == 200) {
-                loadData(YEU_CAU_HUY);
             } else {
                 return;
             }
@@ -619,17 +595,17 @@ public class OrderPanel extends javax.swing.JPanel {
             Response res = oc.updateOrderByID(orderId, DA_HUY, 0, 0);
             JOptionPane.showMessageDialog(null, oc.convertResponse(res.getMessage()).getMessage());
             if (res.getResponseCode() == 200) {
-                loadData(1);
+                loadData(CHO_XU_LY);
             } else {
                 return;
             }
         }
-
-        if (jRadioButton_YeuCauHuy.isSelected()) {
-            Response res = oc.updateOrderByID(orderId, CHO_XU_LY, 0, 0);
+        
+        if (jRadioButton_DangGiao.isSelected()) {
+            Response res = oc.updateOrderByID(orderId, DA_HUY, 0, 0);
             JOptionPane.showMessageDialog(null, oc.convertResponse(res.getMessage()).getMessage());
             if (res.getResponseCode() == 200) {
-                loadData(2);
+                loadData(DANG_GIAO);
             } else {
                 return;
             }
@@ -670,6 +646,7 @@ public class OrderPanel extends javax.swing.JPanel {
             filter("");
             loadData(DANG_GIAO);
             setEnabledButton(false);
+            jButton_No.setEnabled(true);
             jButton_ReturnInfo.setEnabled(false);
         }
     }//GEN-LAST:event_jRadioButton_DangGiaoStateChanged
@@ -684,17 +661,6 @@ public class OrderPanel extends javax.swing.JPanel {
             jButton_ReturnInfo.setEnabled(false);
         }
     }//GEN-LAST:event_jRadioButton_DaGiaoStateChanged
-
-    private void jRadioButton_YeuCauHuyStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jRadioButton_YeuCauHuyStateChanged
-        // TODO add your handling code here:
-
-        if (jRadioButton_YeuCauHuy.isSelected()) {
-            filter("");
-            loadData(YEU_CAU_HUY);
-            setEnabledButton(true);
-            jButton_ReturnInfo.setEnabled(false);
-        }
-    }//GEN-LAST:event_jRadioButton_YeuCauHuyStateChanged
 
     private void jRadioButton_DaHuyStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jRadioButton_DaHuyStateChanged
         // TODO add your handling code here:
@@ -755,7 +721,7 @@ public class OrderPanel extends javax.swing.JPanel {
             filter("");
             loadData(DA_NHAN);
             setEnabledButton(false);
-            jButton_ReturnInfo.setEnabled(false);
+            jButton_ReturnInfo.setEnabled(true);
         }
     }//GEN-LAST:event_jRadioButton_DaNhanStateChanged
 
@@ -768,6 +734,12 @@ public class OrderPanel extends javax.swing.JPanel {
         }
         
         orderId = Integer.parseInt(id);
+        
+        Return return0 = rc.getReturnByOrderId(OrderPanel.orderId);
+        if(return0.getId() == null){
+            JOptionPane.showMessageDialog(null, "This order doesn't have return infomation");
+            return;
+        }
         
         returnDetailDialog = new ReturnDetailDialog(null, true);
         returnDetailDialog.setVisible(true);
@@ -795,7 +767,6 @@ public class OrderPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton_DaNhan;
     private javax.swing.JRadioButton jRadioButton_DaTra;
     private javax.swing.JRadioButton jRadioButton_DangGiao;
-    private javax.swing.JRadioButton jRadioButton_YeuCauHuy;
     private javax.swing.JRadioButton jRadioButton_YeuCauTra;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

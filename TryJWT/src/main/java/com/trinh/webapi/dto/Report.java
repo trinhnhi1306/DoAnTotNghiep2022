@@ -14,6 +14,7 @@ public class Report {
 	private String label;
 	private Long revenue;
 	private Long funds;
+	private Long returns;
 	private Long profit;
 	private Long profitRate;
 

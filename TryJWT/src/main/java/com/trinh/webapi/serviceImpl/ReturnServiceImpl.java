@@ -89,7 +89,7 @@ public class ReturnServiceImpl implements ReturnService {
 	@Override
 	public List<Return> getAllByUserId(Integer userId) {
 		// TODO Auto-generated method stub
-		List<Return> list = returnRepository.findAll();
+		List<Return> list = returnRepository.findAllByOrderByIdDesc();
 		List<Return> result = new ArrayList<>();
 		for(Return r : list) {
 			if(r.getOrder().getUser().getId() == userId)

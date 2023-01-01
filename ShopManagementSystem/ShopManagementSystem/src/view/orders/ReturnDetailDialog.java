@@ -12,6 +12,7 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Return;
 import model.ReturnDetail;
@@ -45,6 +46,7 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
         jLabel_TotalPrice.setText(numberFormat.format(return0.getTotalPrice()));
         jLabel_OrderID.setText(OrderPanel.orderId + "");
         jLabel_Reason.setText("<html>" + return0.getReason() + "</html>");
+        jLabel_Status.setText((return0.getIsApproved() == null) ? "Proccessing" : ((return0.getIsApproved() == true) ? "Approved" : "Unapproved"));
         
         UIController.setDefaultTableHeader(jTable_Product);
         
@@ -70,12 +72,14 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
         jLabel_Email1 = new javax.swing.JLabel();
         jLabel_Email2 = new javax.swing.JLabel();
         jLabel_Email3 = new javax.swing.JLabel();
+        jLabel_Email4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel_ID = new javax.swing.JLabel();
         jLabel_Date = new javax.swing.JLabel();
         jLabel_OrderID = new javax.swing.JLabel();
         jLabel_RefundType = new javax.swing.JLabel();
         jLabel_TotalPrice = new javax.swing.JLabel();
+        jLabel_Status = new javax.swing.JLabel();
         jLabel_Reason = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -114,7 +118,7 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setLayout(new java.awt.GridLayout(5, 1, 0, 10));
+        jPanel5.setLayout(new java.awt.GridLayout(6, 1, 0, 10));
 
         jLabel_Gender1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel_Gender1.setText("ID:");
@@ -136,10 +140,14 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
         jLabel_Email3.setText("Total Price:");
         jPanel5.add(jLabel_Email3);
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 100, 180));
+        jLabel_Email4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel_Email4.setText("Status:");
+        jPanel5.add(jLabel_Email4);
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 100, 250));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new java.awt.GridLayout(5, 1, 0, 10));
+        jPanel3.setLayout(new java.awt.GridLayout(6, 1, 0, 10));
 
         jLabel_ID.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel_ID.setText("ID");
@@ -161,7 +169,11 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
         jLabel_TotalPrice.setText("Total Price");
         jPanel3.add(jLabel_TotalPrice);
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 5, 550, 180));
+        jLabel_Status.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel_Status.setText("Status");
+        jPanel3.add(jLabel_Status);
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 5, 550, 250));
 
         jLabel_Reason.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel_Reason.setText("...");
@@ -188,15 +200,12 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel_Reason, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                        .addContainerGap())))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Reason, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -219,7 +228,7 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -305,6 +314,7 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel_Email1;
     private javax.swing.JLabel jLabel_Email2;
     private javax.swing.JLabel jLabel_Email3;
+    private javax.swing.JLabel jLabel_Email4;
     private javax.swing.JLabel jLabel_Gender1;
     private javax.swing.JLabel jLabel_ID;
     private javax.swing.JLabel jLabel_ImportHistory;
@@ -312,6 +322,7 @@ public class ReturnDetailDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel_OrderID;
     private javax.swing.JLabel jLabel_Reason;
     private javax.swing.JLabel jLabel_RefundType;
+    private javax.swing.JLabel jLabel_Status;
     private javax.swing.JLabel jLabel_TotalPrice;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import model.Brand;
 import model.Response;
+import output.BrandDTO;
 import output.BrandOutput;
 import utils.ConnectAPI;
 
@@ -24,6 +25,8 @@ import utils.ConnectAPI;
  */
 public class BrandController extends BaseController {
 
+    private String getMostPurchased;
+    
     public BrandController() {
         getAll = "/api/brand/all";
         getItemInOnePage = "/api/brand?pageNo=%d&pageSize=20&sortField=id&sortDirection=desc";
@@ -31,6 +34,7 @@ public class BrandController extends BaseController {
         addOne = "/api/admin/brand";
         editOrDelete = "/api/admin/brand/";
         getImage = "/api/brand/image/";
+        getMostPurchased = "/api/admin/brand/most-purchased";
     }
 
     public Brand getBrandById(String id) {
@@ -111,6 +115,19 @@ public class BrandController extends BaseController {
             System.out.println(ex.getMessage());
         }
         return response;
+    }
+    
+    public List<BrandDTO> getMostPurchased(){
+        List<BrandDTO> founderList = null;
+        try {
+            Response reponse = ConnectAPI.excuteHttpMethod("", getMostPurchased, "GET", true);
+            Type typeOfT = new TypeToken<ArrayList<BrandDTO>>() {
+            }.getType();
+            founderList = gson.fromJson(reponse.getMessage(), typeOfT);
+        } catch (IOException ex) {
+            Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return founderList;
     }
 
     public void loadTable(List<Brand> list, DefaultTableModel dtm) {

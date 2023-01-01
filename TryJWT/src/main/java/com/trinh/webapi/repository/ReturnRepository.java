@@ -16,11 +16,19 @@ import com.trinh.webapi.model.User;
 @Repository
 public interface ReturnRepository extends JpaRepository<Return, Integer>{
 	public List<Return> findByIsApprovedOrderByDateDesc(boolean isApproved);
+	public List<Return> findAllByOrderByIdDesc();
 
 	public List<Return> findByOrder(Order order);
-
-	@Query("select sum(r.totalPrice) from Return r where DATE(r.date) = :date")
-	public Long countItem(@Param("date") Date date);
+	
 	public long countByIsApproved(boolean isApproved);
 	public List<Return> findByOrderOrderByDateDesc(Order order);
+	
+	@Query("select sum(o.totalPrice) from Return o where YEAR(o.date) = :year and isApproved = 1")
+	public Long sumReturnsByYear(Integer year);
+	
+	@Query("select sum(o.totalPrice) from Return o where YEAR(o.date) = :year and MONTH(o.date) = :month and isApproved = 1")
+	public Long sumReturnsByYearAndMonth(Integer year, Integer month);
+	
+	@Query("select sum(o.totalPrice) from Return o where DATE(o.date) = :date and isApproved = 1")
+	public Long sumReturnsByDate(@Param("date") Date date);
 }

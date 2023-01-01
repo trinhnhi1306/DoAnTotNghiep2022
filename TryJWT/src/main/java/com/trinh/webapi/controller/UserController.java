@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.trinh.webapi.Exception.AppUtils;
 import com.trinh.webapi.Exception.NotFoundException;
 import com.trinh.webapi.dto.UserDTO;
 import com.trinh.webapi.dto.UserDetailOutput;
@@ -217,9 +219,9 @@ public class UserController {
 			user.setImage(image);
 
 			userService.updateProfile(user);
-			return ResponseEntity.ok("Update user successfully!");
+			return AppUtils.returnJS(HttpStatus.OK, "Update user successfully!", null);
 		} catch (NotFoundException e) {
-			return ResponseEntity.badRequest().body("User not found!");
+			return AppUtils.returnJS(HttpStatus.NOT_FOUND, "User is unavaiable", null);
 		}
 	}
 

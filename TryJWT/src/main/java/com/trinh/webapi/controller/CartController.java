@@ -215,9 +215,20 @@ public class CartController {
 		
 		Cart cart = cartService.findByUserIdAndProductId(cartRequest.getUserId(), cartRequest.getProductId());
 //		
-//		if (quantity <= 0 ) 
-//			cartService.deleteCart(cart.getId());		
-		
+		if (quantity <= 0 ) {
+//			User user = userService.findById(cart.getUser().getId());
+			user.getCarts().remove(cart);
+			
+//			Product product = productService.findById(cart.getProduct().getId());
+			product.getCarts().remove(cart);
+			
+			userService.saveUser(user);
+			productService.addProduct(product);		
+			
+			cartService.deleteCart(cart.getId());
+			cart.setQuantity(0);
+			return AppUtils.returnJS(HttpStatus.OK, "Delete cart successfully!", cart);
+		}
 		
 		if (cart == null) {
 			cart = new Cart(null, product, user, quantity);

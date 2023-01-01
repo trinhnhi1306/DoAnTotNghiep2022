@@ -98,6 +98,8 @@
     <string name="clear">Xóa hết</string>
     <string name="report">Báo cáo</string>
     <string name="name">Tên</string>
+    <string name="momo">Ví MoMo</string>
+    <string name="cash">Thanh toán khi nhận hàng</string>
     <string name="discount">Giảm giá</string>
     <string name="price">Giá</string>
     <string name="quantity">Số lượng</string>

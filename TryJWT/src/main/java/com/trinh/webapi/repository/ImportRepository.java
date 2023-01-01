@@ -30,4 +30,6 @@ public interface ImportRepository extends JpaRepository<Import, Integer>{
 	
 	@Query("select sum(o.totalPrice) from Import o where DATE(o.date) = :date")
 	public Long sumImportByDate(@Param("date") Date date);
+	
+	public List<Import> findByDateBetweenOrderByIdDesc(Date date1, Date date2);
 }

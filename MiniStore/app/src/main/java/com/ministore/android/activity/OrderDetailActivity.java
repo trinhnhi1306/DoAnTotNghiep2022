@@ -26,6 +26,7 @@ import com.ministore.android.adapter.OrderDetailAdapter;
 import com.ministore.android.adapter.OrderStatusViewPagerAdapter;
 import com.ministore.android.adapter.ReturnDetailAdapter;
 import com.ministore.android.api.ApiService;
+import com.ministore.android.fragment.OrderFragment;
 import com.ministore.android.model.Address;
 import com.ministore.android.model.District;
 import com.ministore.android.model.Order;
@@ -52,7 +53,7 @@ public class OrderDetailActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView tvSpecificAddress;
     private RecyclerView rcvOrderDetail, rcvReturnDetail;
-    private TextView tvTotal, tvOrderId, tvDate, tvTotalRefund, tvReturnDate, tvReason;
+    private TextView tvTotal, tvOrderId, tvDate, tvTotalRefund, tvReturnDate, tvReason, tvPaymentType;
     private Button btnAction, btnReturn;
     private LinearLayout returnLayout;
 
@@ -71,10 +72,11 @@ public class OrderDetailActivity extends AppCompatActivity {
         tvTotal.setText(String.format("%s đ", MyApplication.formatNumber(order.getTotalPrice())));
         tvOrderId.setText(String.valueOf(order.getOrderId()));
         tvDate.setText(String.format(MyApplication.formatDate(order.getDate())));
+        tvPaymentType.setText(order.getPaymentType().equals("off") ? "Thanh toán khi nhận hàng" : "MoMo");
         tvSpecificAddress.setText(order.getAddress());
 
         int statusId = order.getStatus().getId();
-        if(statusId == 8 || statusId == 9){
+        if(OrderFragment.STATUS_ID == 9){
             returnLayout.setVisibility(View.VISIBLE);
             ApiService.apiService.getReturnByOrderId(MyApplication.getAuthorization(), order.getOrderId()).enqueue(new Callback<Return>() {
                 @Override
@@ -148,13 +150,13 @@ public class OrderDetailActivity extends AppCompatActivity {
                     }
                 });
         int check = order.getStatus().getId();
-        if (check == 8 || check == 9) {
+        if (OrderFragment.STATUS_ID == 9 || check == 3) {
             btnReturn.setVisibility(View.GONE);
             btnAction.setVisibility(View.GONE);
             return;
         }
         MyApplication.setActionButton(btnAction, check);
-        if(check != 3)
+        if(check != 4)
             btnReturn.setVisibility(View.GONE);
         else
             btnReturn.setOnClickListener(new View.OnClickListener() {
@@ -169,7 +171,7 @@ public class OrderDetailActivity extends AppCompatActivity {
             });
 
         btnAction.setOnClickListener(view -> {
-            MyApplication.actionOrder(getApplicationContext(), order, new MyApplication.OnOrderActionListener() {
+            MyApplication.actionOrder(this, order, new MyApplication.OnOrderActionListener() {
                 @Override
                 public void onAuthenticationFailed() {
                     MyApplication.goToLoginActivity(OrderDetailActivity.this);
@@ -206,6 +208,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         rcvOrderDetail = findViewById(R.id.rcv_order_detail);
         rcvReturnDetail = findViewById(R.id.rcv_returnDetail);
         tvTotal = findViewById(R.id.tv_total);
+        tvPaymentType = findViewById(R.id.tv_payment_type);
         tvTotalRefund = findViewById(R.id.tv_totalRefund);
         tvReason = findViewById(R.id.tv_reason);
         tvReturnDate = findViewById(R.id.tv_returnDate);

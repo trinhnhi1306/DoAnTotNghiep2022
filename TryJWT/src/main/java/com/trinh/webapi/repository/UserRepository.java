@@ -29,7 +29,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
 	public List<User> findAllByStatus(boolean status);
 	
-	public List<User> findByRolesIn(Collection<Role> role);
+	public List<User> findByRolesInAndStatus(Collection<Role> role, Boolean status);
 
 	public Boolean existsByPhone(String phone);
 

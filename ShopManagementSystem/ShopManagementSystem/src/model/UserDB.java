@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.Set;
+
 /**
  *
  * @author TRINH
@@ -19,6 +21,7 @@ public class UserDB {
     private String phone;
     private String image;
     private boolean status;
+    private Set<String> role;
 
     public UserDB() {
     }
@@ -106,4 +109,13 @@ public class UserDB {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    public Set<String> getRole() {
+        return role;
+    }
+
+    public void setRole(Set<String> role) {
+        this.role = role;
+    }
+    
 }

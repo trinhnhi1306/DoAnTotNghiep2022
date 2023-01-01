@@ -35,7 +35,6 @@ import retrofit2.Response;
 public class ConfirmReturnActivity extends AppCompatActivity {
 
     public static final String OFF_PAYMENT = "off";
-    public static final String ON_PAYMENT = "on";
 
     private Toolbar toolbar;
     private RecyclerView rcvReturnDetail;
@@ -65,10 +64,10 @@ public class ConfirmReturnActivity extends AppCompatActivity {
     }
 
     private void setEvent() {
-        if(order.getPaymentType().equals(ON_PAYMENT))
-            tvRefundType.setText("E-pay");
-        else
+        if(order.getPaymentType().equals(OFF_PAYMENT))
             tvRefundType.setText("Cash");
+        else
+            tvRefundType.setText("MoMo");
 
 //        Toast.makeText(this, ReturnAdapter.selectedOderDetails.get(0).getId() + "", Toast.LENGTH_SHORT).show();
         list = ReturnAdapter.selectedOderDetails;

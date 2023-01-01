@@ -178,8 +178,8 @@ public class ReturnActivity extends AppCompatActivity {
 
     public void updateInfo() {
         cbAllItems.setChecked(returnAdapter.isAllOrderItemSelected());
-        cbAllItems.setText(String.format("Select all (%s products, %s selected)",
-                returnAdapter.getItemCount(), returnAdapter.getSelectedProductCount()));
+        cbAllItems.setText(String.format("Select all (%s products)",
+                returnAdapter.getItemCount()));
     }
 
     private void setControl() {

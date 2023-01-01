@@ -1,5 +1,6 @@
 package com.trinh.webapi.serviceImpl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,5 +54,11 @@ public class ImportServiceImpl implements ImportService {
 	@Override
 	public Import addImport(Import imports) {
 		return importRepository.save(imports);
+	}
+
+	@Override
+	public List<Import> searchImport(Date date1, Date date2) {
+		// TODO Auto-generated method stub
+		return importRepository.findByDateBetweenOrderByIdDesc(date1, date2);
 	}
 }

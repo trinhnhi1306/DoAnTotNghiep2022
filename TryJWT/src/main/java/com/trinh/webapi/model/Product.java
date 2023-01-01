@@ -58,7 +58,7 @@ public class Product {
 	@Column(name = "sold_quantity")
 	private int soldQuantity;
 
-	@Min(value = 1, message = "Quantity should be greater than 0")
+	@Min(value = 0, message = "Quantity should be greater than equals 0")
 	private int quantity;
 
 	@NotNull(message = "Category must not be null")

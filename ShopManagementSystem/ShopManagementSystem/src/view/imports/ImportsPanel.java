@@ -61,8 +61,8 @@ public class ImportsPanel extends javax.swing.JPanel {
         jPanel_BillDateInfo = new javax.swing.JPanel();
         jLabel_DayImportHistoryFrom = new javax.swing.JLabel();
         jLabel_DayImportHistoryTo = new javax.swing.JLabel();
-        jDateChooser_ImportHistoryFrom = new com.toedter.calendar.JDateChooser();
-        jDateChooser_ImportHistoryTo = new com.toedter.calendar.JDateChooser();
+        jDateChooser_StartDate = new com.toedter.calendar.JDateChooser();
+        jDateChooser_FinishDate = new com.toedter.calendar.JDateChooser();
         jButton_Apply = new javax.swing.JButton();
         jButton_Clear = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -131,13 +131,13 @@ public class ImportsPanel extends javax.swing.JPanel {
         jLabel_DayImportHistoryTo.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel_DayImportHistoryTo.setText("To");
 
-        jDateChooser_ImportHistoryFrom.setDate(new java.util.Date());
-        jDateChooser_ImportHistoryFrom.setDateFormatString("dd-MM-yyyy");
-        jDateChooser_ImportHistoryFrom.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jDateChooser_StartDate.setDate(new java.util.Date());
+        jDateChooser_StartDate.setDateFormatString("dd-MM-yyyy");
+        jDateChooser_StartDate.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
 
-        jDateChooser_ImportHistoryTo.setDate(new java.util.Date());
-        jDateChooser_ImportHistoryTo.setDateFormatString("dd-MM-yyyy");
-        jDateChooser_ImportHistoryTo.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jDateChooser_FinishDate.setDate(new java.util.Date());
+        jDateChooser_FinishDate.setDateFormatString("dd-MM-yyyy");
+        jDateChooser_FinishDate.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
 
         jButton_Apply.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jButton_Apply.setForeground(new java.awt.Color(51, 51, 51));
@@ -172,8 +172,8 @@ public class ImportsPanel extends javax.swing.JPanel {
                     .addComponent(jLabel_DayImportHistoryTo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_BillDateInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jDateChooser_ImportHistoryTo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jDateChooser_ImportHistoryFrom, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
+                    .addComponent(jDateChooser_FinishDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDateChooser_StartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
                 .addGap(80, 80, 80)
                 .addGroup(jPanel_BillDateInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton_Apply, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,11 +188,11 @@ public class ImportsPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(jPanel_BillDateInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel_DayImportHistoryFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateChooser_ImportHistoryFrom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jDateChooser_StartDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel_BillDateInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel_DayImportHistoryTo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                            .addComponent(jDateChooser_ImportHistoryTo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jDateChooser_FinishDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel_BillDateInfoLayout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jButton_Apply, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -417,16 +417,13 @@ public class ImportsPanel extends javax.swing.JPanel {
 
     private void jButton_ApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ApplyActionPerformed
         // TODO add your handling code here:
-        //        LocalDate startDate = jDateChooser_ImportHistoryFrom.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        //        LocalDate endDate = jDateChooser_ImportHistoryTo.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        //        Duration diff = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay());
-        //        long diffDays = diff.toDays();
-        //        if (diffDays < 0) {
-            //            JOptionPane.showMessageDialog(this, "The start date must be less than the end date!");
-            //        } else {
-            //            histories = importHistory.readImportHistoriesByDate(startDate, endDate);
-            //            addRowsToHistoryTable(ingredientList);
-            //        }
+        List<Imports> list = ic.searchImports(jDateChooser_StartDate.getDate(), jDateChooser_FinishDate.getDate());
+        ic.loadTable(list, dtmImport);
+        jTextField_ID.setText("");
+        jTextField_User.setText("");
+        jTextField_Price.setText("");
+        jTextField_Date.setText("");
+        dtmProduct.setRowCount(0);
     }//GEN-LAST:event_jButton_ApplyActionPerformed
 
     private void jTable_HistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_HistoryMouseClicked
@@ -453,6 +450,7 @@ public class ImportsPanel extends javax.swing.JPanel {
 
     private void jButton_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ClearActionPerformed
         // TODO add your handling code here:
+        loadData();
     }//GEN-LAST:event_jButton_ClearActionPerformed
 
     private void jTextField_NameSearchCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_jTextField_NameSearchCaretUpdate
@@ -468,8 +466,8 @@ public class ImportsPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton_Add;
     private javax.swing.JButton jButton_Apply;
     private javax.swing.JButton jButton_Clear;
-    private com.toedter.calendar.JDateChooser jDateChooser_ImportHistoryFrom;
-    private com.toedter.calendar.JDateChooser jDateChooser_ImportHistoryTo;
+    private com.toedter.calendar.JDateChooser jDateChooser_FinishDate;
+    private com.toedter.calendar.JDateChooser jDateChooser_StartDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

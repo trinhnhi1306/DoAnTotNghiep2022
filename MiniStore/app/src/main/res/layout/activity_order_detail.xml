@@ -175,7 +175,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Delivery time"
+                    android:text="Order time"
                     android:textColor="@color/black"
                     android:textSize="11sp"
                     android:textStyle="bold" />
@@ -194,6 +194,28 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/light_gray" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment type"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_payment_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Thanh toán khi nhận hàng"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+            </RelativeLayout>
             <LinearLayout
                 android:id="@+id/layout_return_info"
                 android:layout_width="match_parent"

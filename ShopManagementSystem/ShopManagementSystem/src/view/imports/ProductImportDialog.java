@@ -245,7 +245,17 @@ public class ProductImportDialog extends javax.swing.JDialog {
     private void jButton_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SaveActionPerformed
         // TODO add your handling code here:
         int addQuantities = (int) jSpinner_ImportAmount.getValue();
+        if(addQuantities == 0) {
+            JOptionPane.showMessageDialog(null, "Quantity should be greater than 0");
+            return;
+        }
+        
         float price = Float.parseFloat(jSpinner_Price.getValue().toString());
+        
+        if(price >= oldPrice) {
+            JOptionPane.showMessageDialog(this, "Giá nhập lớn hơn/bằng giá bán hiên tại (" + oldPrice + "), bạn nên chỉnh lại giá bán");
+        }
+        
         ImportDetail detail = new ImportDetail();
         detail.setProduct(new Product(Integer.parseInt(productID), productName));
         detail.setQuantity(addQuantities);

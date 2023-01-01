@@ -32,12 +32,25 @@ public class UserController extends BaseController {
     private final String signIn = "/api/auth/signin";
     private final String setStatus = "/api/users/setStatus";
     private final String updatePassword = "/api/users/change-password";
+    private final String addShipper = "/api/auth/signup";
 
     public UserController() {
         getOneByID = "/api/users/";
         getItemInOnePage = "/api/users/numorders?status=%s&pageNo=%d&pageSize=20&sortField=id&sortDirection=desc";
         getImage = "/api/users/image/";
         editOrDelete = "/api/users/edit-profile";
+    }
+    
+    public Response addShipper(UserDB user){
+        Response response = null;
+        try {
+            String json = gson.toJson(user);
+            response = ConnectAPI.excuteHttpMethod(json, addShipper, "POST", true);
+            System.out.println(response.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return response;
     }
 
     public Response updatePassword(Password pass) {
@@ -116,7 +129,7 @@ public class UserController extends BaseController {
         }
         return founderList;
     }
-
+    
     public UserOutput getUserInOnePage(int pageNo) {
         String str = String.format(getItemInOnePage, "true", pageNo);
         System.out.println(str);
